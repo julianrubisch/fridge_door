@@ -59,3 +59,5 @@ group :test do
 end
 
 gem "litestack", "~> 0.4.3"
+
+gem "sqlpkg", "~> 0.2.3"
