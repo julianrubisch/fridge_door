@@ -63,3 +63,5 @@ gem "litestack", "~> 0.4.4"
 gem "sqlpkg", "~> 0.2.3"
 
 gem "litestream", "~> 0.11.0"
+
+gem "phlex-rails", "~> 1.2"
