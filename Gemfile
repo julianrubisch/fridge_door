@@ -58,6 +58,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "litestack", "~> 0.4.3"
+gem "litestack", "~> 0.4.4"
 
 gem "sqlpkg", "~> 0.2.3"
+
+gem "litestream", "~> 0.11.0"
