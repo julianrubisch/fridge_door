@@ -52,6 +52,10 @@ RUN bundle install && \
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
+# Install sqlpkg extensions
+RUN mkdir .sqlpkg
+RUN bundle exec sqlpkg install
+
 # Copy application code
 COPY . .
 

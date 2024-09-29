@@ -69,3 +69,5 @@ gem "mission_control-jobs", "~> 0.3"
 gem "litestream", "~> 0.11.0"
 # Add Solid Errors for error monitoring
 gem "solid_errors", "~> 0.5"
+
+gem "sqlpkg", "~> 0.2.3"
