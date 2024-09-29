@@ -71,3 +71,5 @@ gem "litestream", "~> 0.11.0"
 gem "solid_errors", "~> 0.5"
 
 gem "sqlpkg", "~> 0.2.3"
+
+gem "phlex-rails", "2.0.0.beta2"

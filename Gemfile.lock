@@ -227,6 +227,10 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
+    phlex (2.0.0.beta2)
+    phlex-rails (2.0.0.beta2)
+      phlex (= 2.0.0.beta2)
+      railties (>= 6.1, < 8)
     propshaft (1.0.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -423,6 +427,7 @@ DEPENDENCIES
   kamal (>= 2.0.0.rc2)
   litestream (~> 0.11.0)
   mission_control-jobs (~> 0.3)
+  phlex-rails (= 2.0.0.beta2)
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.0.beta1)
