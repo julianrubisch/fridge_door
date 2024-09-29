@@ -1,24 +1,30 @@
-# README
+# Weisslich
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A very opinionated, _conceptually compressed_ Rails template
 
-Things you may want to cover:
+- Rails 7.2
+- Litestack (pre-installed)
+- Litestream (pre-installed, unconfigured)
+- authentication_zero (pre-installed, unconfigured)
 
-* Ruby version
+- Bulma, without components, forms, elements:
+  - utilities
+  - base
+  - helpers
+  - themes
+  - grid
+  - layout
+- Web awesome
+  - TODO form builder
+- Phlex
+- Propshaft
+- TODO Vite?
 
-* System dependencies
+- TODO Kamal 2
 
-* Configuration
+  
+- Interactive setup script
+  - TODO ask about sqlite-ulid, sqlite-vec
+  - TODO auth zero installer
+  - TODO choose icon set: heroicon, tabler, and integrate with web-awesome
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
