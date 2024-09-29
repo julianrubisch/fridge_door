@@ -8,11 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Weisslich
   class Application < Rails::Application
-    config.autoload_paths << "#{root}/app/views"
-    config.autoload_paths << "#{root}/app/views/layouts"
-    config.autoload_paths << "#{root}/app/views/components"
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.2
+    config.load_defaults 8.0
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
