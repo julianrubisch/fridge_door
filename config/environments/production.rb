@@ -52,6 +52,12 @@ Rails.application.configure do
   # Replace the default in-process and non-durable queuing backend for Active Job.
   config.active_job.queue_adapter = :solid_queue
   config.solid_queue.connects_to = { database: { writing: :queue } }
+  # Ensure authorization is enabled for the Solid Queue web UI
+  config.mission_control.jobs.base_controller_class = "MissionControl::BaseController"
+
+  config.solid_queue.connects_to = { database: { writing: :queue } }
+  # Ensure authorization is enabled for the Solid Queue web UI
+  config.mission_control.jobs.base_controller_class = "MissionControl::BaseController"
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -88,4 +94,11 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+  # Configure Solid Errors
+  config.solid_errors.connects_to = { database: { writing: :errors } }
+  config.solid_errors.send_emails = true
+  config.solid_errors.email_from = ""
+  config.solid_errors.email_to = ""
+  config.solid_errors.username = Rails.application.credentials.dig(:solid_errors, :username)
+  config.solid_errors.password = Rails.application.credentials.dig(:solid_errors, :password)
 end

@@ -63,3 +63,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+# Add a web UI for Solid Queue
+gem "mission_control-jobs", "~> 0.3"
+# Ensure all SQLite databases are backed up
+gem "litestream", "~> 0.11.0"
+# Add Solid Errors for error monitoring
+gem "solid_errors", "~> 0.5"
