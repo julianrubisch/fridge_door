@@ -4,6 +4,9 @@ class Components::Layout < Components::Base
   include Phlex::Rails::Layout
   include Phlex::Rails::Helpers::ContentFor
 
+  register_output_helper :vite_client_tag
+  register_output_helper :vite_javascript_tag
+
   def view_template(&block)
     doctype
 
@@ -15,8 +18,10 @@ class Components::Layout < Components::Base
         csrf_meta_tags
         stylesheet_link_tag "application", data_turbo_track: "reload"
         stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.4/dist/themes/default.css"
-        javascript_importmap_tags
-        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.4/dist/webawesome.loader.js", type: "module"
+        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.4/dist/webawesome.loader.js", type: "module", async: true, defer: true
+
+        vite_client_tag
+        vite_javascript_tag "application"
       end
 
       body(data: {
