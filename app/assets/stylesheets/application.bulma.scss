@@ -43,3 +43,9 @@
 // @import "bulma/sass/layout/section.sass";
 
 // @import 'bulma/bulma';
+
+// dark mode
+html.wa-theme-default-dark .only-light,
+html:not(.wa-theme-default-dark) .only-dark {
+  display: none;
+}

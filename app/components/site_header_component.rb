@@ -14,10 +14,15 @@ class Components::SiteHeaderComponent < Components::Base
         }
       }
       div(class: "level-right") {
-        render WebAwesome::WaDropdown.new(placement: "bottom-start") do |dropdown|
+        render WebAwesome::WaDropdown.new(placement: "bottom-start", data: {
+                                            controller: "radio-dropdown",
+                                            action: "dark-mode:change@document->radio-dropdown#updateSelection",
+                                            radio_dropdown_key_value: "colorScheme"}) do |dropdown|
                       render WebAwesome::WaButton.new(slot: :trigger, appearance: :tinted, size: :small, pill: true, caret: true) do |button|
-                        render WebAwesome::WaIcon.new(slot: "prefix", name: "sun", variant: "solid")
-                        plain "Light"
+                        render WebAwesome::WaIcon.new(slot: "prefix", name: "sun", variant: "solid", class: "only-light")
+                        render WebAwesome::WaIcon.new(slot: "prefix", name: "moon", variant: "solid", class: "only-dark")
+                        span(class: "only-light") { "Light" }
+                        span(class: "only-dark") { "Dark" }
                       end
 
                       render WebAwesome::WaMenu.new(data: { action: "wa-select->dark-mode#toggle" }) do

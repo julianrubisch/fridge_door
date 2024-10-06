@@ -26,6 +26,7 @@ class Components::Layout < Components::Base
 
       body(data: {
            controller: "dark-mode",
+           action: "dark-mode:change->dark-mode#updateColorScheme",
            dark_mode_dark_class: "wa-theme-default-dark theme-dark",
            dark_mode_light_class: "wa-theme-default-light theme-light"
          }) do
