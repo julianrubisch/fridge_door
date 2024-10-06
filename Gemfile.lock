@@ -1,3 +1,24 @@
+GIT
+  remote: https://github.com/KonnorRogers/phlex_custom_element_generator.git
+  revision: 01e92d4d73762795ab77b80c7d34dca8539f0313
+  branch: konnorrogers/add-attributes-to-class-definitions
+  specs:
+    phlex_custom_element_generator (0.1.0)
+      prompts (~> 0.2)
+      thor
+
+GIT
+  remote: https://github.com/KonnorRogers/prompts.git
+  revision: 73f0fe63721afb06aef598301060f8889431aa53
+  branch: konnorrogers/fix-fmt-calls
+  specs:
+    prompts (0.2.1)
+      fmt
+      rainbow
+      reline
+      unicode-display_width
+      unicode-emoji
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -111,6 +132,8 @@ GEM
     erubi (1.13.0)
     et-orbi (1.2.11)
       tzinfo
+    fmt (0.3.1)
+      ast
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -384,6 +407,9 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
+    unicode-emoji (3.5.0)
+      unicode-version (~> 1.0)
+    unicode-version (1.4.0)
     uri (0.13.1)
     useragent (0.16.10)
     web-console (4.2.1)
@@ -428,6 +454,8 @@ DEPENDENCIES
   litestream (~> 0.11.0)
   mission_control-jobs (~> 0.3)
   phlex-rails (= 2.0.0.beta2)
+  phlex_custom_element_generator!
+  prompts!
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.0.beta1)
