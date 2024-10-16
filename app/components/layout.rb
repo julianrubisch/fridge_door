@@ -20,6 +20,26 @@ class Components::Layout < Components::Base
         stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.4/dist/themes/default.css"
         javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.4/dist/webawesome.loader.js", type: "module", async: true, defer: true
 
+        script {
+          safe <<~JS
+            function isDark(colorScheme) {
+              if (colorScheme === "auto") {
+                return window.matchMedia("(prefers-color-scheme: dark)").matches;
+              }
+
+              return colorScheme === "dark";
+            }
+
+            if("colorScheme" in localStorage) {
+              document.documentElement.classList.toggle("wa-theme-default-dark", isDark(localStorage.colorScheme));
+              document.documentElement.classList.toggle("theme-dark", isDark(localStorage.colorScheme));
+
+              document.documentElement.classList.toggle("wa-theme-default-light", !isDark(localStorage.colorScheme));
+              document.documentElement.classList.toggle("theme-light", !isDark(localStorage.colorScheme));
+            }
+JS
+        }
+
         vite_client_tag
         vite_javascript_tag "application"
       end
