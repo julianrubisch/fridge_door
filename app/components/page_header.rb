@@ -2,13 +2,13 @@
 
 class Components::PageHeader < Components::Base
   def view_template(&)
-    div(class: "is-flex is-justify-content-space-between is-align-items-baseline", &)
+    header(class: "is-flex is-justify-content-space-between is-align-items-baseline", &)
 
     render Components::WebAwesome::WaDivider.new
   end
 
-  def title(&)
-    h1(class: "is-size-3", &)
+  def title_bar(&)
+    render TitleBar.new(&)
   end
 
   def actions(&)
