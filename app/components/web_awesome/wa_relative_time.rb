@@ -4,9 +4,9 @@ module Components
       register_element :wa_relative_time
 
       def initialize(
-        date: new Date(),
-        format: 'long',
-        numeric: 'auto',
+        date: Date.current,
+        format: "long",
+        numeric: "auto",
         sync: false,
         **attributes
       )

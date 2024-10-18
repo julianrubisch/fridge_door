@@ -4,11 +4,11 @@ module Components
       register_element :wa_format_date
 
       def initialize(
-        date: new Date(),
+        date: Date.current,
         day: nil,
         era: nil,
         hour: nil,
-        hour_format: 'auto',
+        hour_format: "auto",
         minute: nil,
         month: nil,
         second: nil,

@@ -22,7 +22,7 @@ module Rails
       private
 
       def view_files_path
-        !namespaced? ? plural_name : (namespace_dirs + [plural_name])
+        !namespaced? ? plural_name : (namespace_dirs + [ plural_name ])
       end
     end
   end
