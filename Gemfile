@@ -80,3 +80,4 @@ gem "phlex-rails", "2.0.0.beta2"
 gem "vite_rails"
 
 gem "authentication-zero", "~> 4.0"
+gem "avo", ">= 3.2"
