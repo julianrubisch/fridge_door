@@ -71,6 +71,19 @@ html:not(.wa-theme-default-dark) .only-dark {
 .wa-theme-default-dark {
   --wa-color-text-link: var(--wa-color-violet-70);
 }
+
+// callouts
+wa-callout {
+  strong {
+    color: var(--content-color);
+  }
+}
+
+// validation
+[data-wa-invalid] {
+  --border-color: var(--wa-color-danger-border-normal);
+}
+
 // typography
 a {
   color: var(--wa-color-text-link);
