@@ -4,9 +4,13 @@
 # This allows you to configure Litestream using Rails encrypted credentials,
 # or some other mechanism where the values are only avaialble at runtime.
 
-Litestream.configure do |config|
+# Ensure authorization is enabled for the Litestream web UI
+Litestream.username = "admin"
+Litestream.password = "lite$tr3am" # TODO: CHANGE THIS
+
+Rails.application.configure do
   # An example of using Rails encrypted credentials to configure Litestream.
-  # litestream_credentials = Rails.application.credentials.litestream
+  litestream_credentials = Rails.application.credentials.litestream
 
   # Replica-specific bucket location.
   # This will be your bucket's URL without the `https://` prefix.
@@ -19,15 +23,15 @@ Litestream.configure do |config|
   # any SFTP server.
   # In this example, we are using Rails encrypted credentials to store the URL to
   # our storage provider bucket.
-  # config.replica_bucket = litestream_credentials.replica_bucket
+  config.litestream.replica_bucket = litestream_credentials&.replica_bucket
 
   # Replica-specific authentication key.
   # Litestream needs authentication credentials to access your storage provider bucket.
   # In this example, we are using Rails encrypted credentials to store the access key ID.
-  # config.replica_key_id = litestream_credentials.replica_key_id
+  config.litestream.replica_key_id = litestream_credentials&.replica_key_id
 
   # Replica-specific secret key.
   # Litestream needs authentication credentials to access your storage provider bucket.
   # In this example, we are using Rails encrypted credentials to store the secret access key.
-  # config.replica_access_key = litestream_credentials.replica_access_key
+  config.litestream.replica_access_key = litestream_credentials&.replica_access_key
 end

@@ -1,8 +1,11 @@
-# syntax = docker/dockerfile:1
+# syntax=docker/dockerfile:1
+# check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t my-app .
-# docker run -d -p 80:80 -p 443:443 --name my-app -e RAILS_MASTER_KEY=<value from config/master.key> my-app
+# docker build -t weisslich .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name weisslich weisslich
+
+# For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=3.3.4
@@ -13,7 +16,7 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libsqlite3-0 libvips && \
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
@@ -49,6 +52,10 @@ RUN bundle install && \
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
+# Install sqlpkg extensions
+RUN mkdir .sqlpkg
+RUN bundle exec sqlpkg install
+
 # Copy application code
 COPY . .
 
@@ -78,6 +85,6 @@ USER 1000:1000
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
-CMD ["./bin/rails", "server"]
+# Start server via Thruster by default, this can be overwritten at runtime
+EXPOSE 80
+CMD ["./bin/thrust", "./bin/rails", "server"]

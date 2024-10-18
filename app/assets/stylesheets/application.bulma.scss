@@ -43,3 +43,64 @@
 // @import "bulma/sass/layout/section.sass";
 
 // @import 'bulma/bulma';
+
+// dark mode
+html.wa-theme-default-dark .only-light,
+html:not(.wa-theme-default-dark) .only-dark {
+  display: none;
+}
+
+// customize wa theme
+:root,
+:host,
+.wa-theme-default-light {
+  /* Changes the brand color to violet across the library */
+  --wa-color-brand-fill-quiet: var(--wa-color-violet-95);
+  --wa-color-brand-fill-normal: var(--wa-color-violet-90);
+  --wa-color-brand-fill-loud: var(--wa-color-violet-50);
+  --wa-color-brand-border-quiet: var(--wa-color-violet-90);
+  --wa-color-brand-border-normal: var(--wa-color-violet-80);
+  --wa-color-brand-border-loud: var(--wa-color-violet-60);
+  --wa-color-brand-on-quiet: var(--wa-color-violet-40);
+  --wa-color-brand-on-normal: var(--wa-color-violet-30);
+  --wa-color-brand-on-loud: white;
+
+  --wa-color-text-link: var(--wa-color-violet-40);
+}
+
+.wa-theme-default-dark {
+  --wa-color-text-link: var(--wa-color-violet-70);
+}
+
+// callouts
+wa-callout {
+  strong {
+    color: var(--content-color);
+  }
+}
+
+// validation
+[data-wa-invalid] {
+  --border-color: var(--wa-color-danger-border-normal);
+}
+
+// typography
+a {
+  color: var(--wa-color-text-link);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// grid
+wa-card.grid-card {
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  max-height: 16rem;
+
+  &::part(base) {
+    height: 100%;
+  }
+}
