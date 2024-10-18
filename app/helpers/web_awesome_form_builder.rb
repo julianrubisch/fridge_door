@@ -1,7 +1,7 @@
 class WebAwesomeFormBuilder < ActionView::Helpers::FormBuilder
   # General method to handle different input types using wa-input
   def wa_input(method, options = {})
-    @template.content_tag("wa-input", nil, options.merge(name: "#{@object_name}[#{method}]", value: object.send(method), required: attribute_required_on_model?(object, method)))
+    @template.content_tag("wa-input", nil, options.merge(name: "#{@object_name}[#{method}]", value: object&.send(method), required: attribute_required_on_model?(object, method)))
   end
 
   def text_field(method, options = {})
@@ -61,6 +61,8 @@ class WebAwesomeFormBuilder < ActionView::Helpers::FormBuilder
   # Add more overrides as needed...
 
   def attribute_required_on_model?(object, attribute)
+    return unless object
+
     object.class.validators_on(attribute).any? { |v| v.is_a?(ActiveModel::Validations::PresenceValidator) }
   end
 end
