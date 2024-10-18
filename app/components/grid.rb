@@ -6,6 +6,8 @@ class Components::Grid < Components::Base
   end
 
   def view_template(&)
-    div(id: @id, class: "grid is-col-min-12", &)
+    div(id: @id, class: "fixed-grid has-1-cols-mobile has-2-cols-tablet has-3-cols-desktop has-4-cols-widescreen") {
+      div(class: "grid", &)
+    }
   end
 end
