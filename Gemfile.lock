@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/konnorrogers/phlex_custom_element_generator.git
-  revision: 833ff1de801b06d1b7af97405bdd86fee938fdbc
+  revision: f21050318c6b70e1e082d40e2f39635000a15248
   specs:
     phlex_custom_element_generator (0.1.0)
       prompts (~> 0.2)
@@ -132,7 +132,7 @@ GEM
     erubi (1.13.0)
     et-orbi (1.2.11)
       tzinfo
-    fmt (0.3.1)
+    fmt (0.3.3)
       ast
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
@@ -409,7 +409,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    unicode-emoji (3.5.0)
+    unicode-emoji (3.7.0)
       unicode-version (~> 1.0)
     unicode-version (1.4.0)
     uri (0.13.1)
