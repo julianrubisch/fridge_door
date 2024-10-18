@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/KonnorRogers/prompts.git
-  revision: 73f0fe63721afb06aef598301060f8889431aa53
+  revision: dc344cb0c71655fe40d1e915233b04ed41daed19
   branch: konnorrogers/fix-fmt-calls
   specs:
     prompts (0.2.1)
-      fmt
+      fmt (>= 0.3.0)
       rainbow
       reline
       unicode-display_width
