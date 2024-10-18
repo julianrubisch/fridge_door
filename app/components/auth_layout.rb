@@ -54,25 +54,27 @@ JS
            dark_mode_light_class: "wa-theme-default-light theme-light"
          }) do
         main(class: "container is-max-desktop px-4 py-6 is-flex is-flex-direction-column is-justify-content-center is-align-items-center") {
-          if notice.present?
-            render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
-              render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
-
-              span { notice }
-            }
-          end
-
-          if alert.present?
-            render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "danger") {
-              render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-exclamation", variant: :regular)
-
-              span { alert }
-            }
-          end
-
           h1(class: "is-size-2 mb-4") { Rails.application.name }
 
-          render Components::WebAwesome::WaCard.new(class: "card-auth", &block)
+          render Components::WebAwesome::WaCard.new(class: "card-auth") {
+            if notice.present?
+              render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
+                render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
+
+                span { notice }
+              }
+            end
+
+            if alert.present?
+              render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "danger") {
+                render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-exclamation", variant: :regular)
+
+                span { alert }
+              }
+            end
+
+            yield
+          }
         }
       end
     end
