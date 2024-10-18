@@ -12,7 +12,7 @@ class Components::Layout < Components::Base
 
     html do
       head do
-        title { content_for(:title) || "Weisslich" }
+        title { content_for(:title) || Rails.application.name }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
         csp_meta_tag
         csrf_meta_tags

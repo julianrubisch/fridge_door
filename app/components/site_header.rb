@@ -7,7 +7,7 @@ class Components::SiteHeader < Components::Base
     nav(class: "level p-4") {
       ul(class: "level-left") {
         li(class: "level-item mr-4") {
-          h1(class: "is-size-4") { "Weisslich" }
+          h1(class: "is-size-4") { Rails.application.name }
         }
         li(class: "level-item") {
           # add main nav here
