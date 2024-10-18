@@ -78,3 +78,5 @@ gem "sqlpkg", "~> 0.2.3"
 gem "phlex-rails", "2.0.0.beta2"
 
 gem "vite_rails"
+
+gem "authentication-zero", "~> 4.0"
