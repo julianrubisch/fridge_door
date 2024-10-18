@@ -57,7 +57,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  gem "phlex_custom_element_generator", github: "KonnorRogers/phlex_custom_element_generator", branch: "konnorrogers/add-attributes-to-class-definitions"
+  gem "phlex_custom_element_generator", github: "konnorrogers/phlex_custom_element_generator"
   gem "prompts", github: "KonnorRogers/prompts", branch: "konnorrogers/fix-fmt-calls"
 end
 
