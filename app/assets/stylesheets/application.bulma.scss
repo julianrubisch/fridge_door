@@ -72,6 +72,10 @@ html:not(.wa-theme-default-dark) .only-dark {
   --wa-color-text-link: var(--wa-color-violet-70);
 }
 
+body {
+  font-family: var(--wa-font-family-body);
+}
+
 // callouts
 wa-callout {
   strong {
@@ -107,5 +111,6 @@ wa-card.grid-card {
 
 // auth layout
 wa-card.card-auth {
-  width: 24rem;
+  width: 30rem;
+  max-width: 100%;
 }
