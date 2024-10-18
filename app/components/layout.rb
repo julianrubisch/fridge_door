@@ -50,7 +50,7 @@ JS
            dark_mode_dark_class: "wa-theme-default-dark theme-dark",
            dark_mode_light_class: "wa-theme-default-light theme-light"
          }) do
-        render SiteHeaderComponent.new
+        render SiteHeader.new
         main(class: "container is-max-desktop px-4", &block)
       end
     end

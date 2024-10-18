@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Components::SiteHeaderComponent < Components::Base
+class Components::SiteHeader < Components::Base
   include Phlex::Rails::Helpers::LinkTo
 
   def view_template
