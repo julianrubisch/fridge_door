@@ -10,7 +10,7 @@ class Components::SiteHeader < Components::Base
           h1(class: "is-size-4") { "Weisslich" }
         }
         li(class: "level-item") {
-          link_to "Posts", posts_path
+          # add main nav here
         }
       }
       div(class: "level-right") {
