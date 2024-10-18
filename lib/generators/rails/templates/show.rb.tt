@@ -1,0 +1,49 @@
+# frozen_string_literal: true
+
+class Views::<%= class_name.pluralize %>::Show < Views::Base
+  include Phlex::Rails::Helpers::Routes
+  include Phlex::Rails::Helpers::ContentFor
+  include Phlex::Rails::Helpers::DOMID
+  include Phlex::Rails::Helpers::ButtonTo
+  include Phlex::Rails::Helpers::Notice
+
+  def initialize(<%= model_resource_name %>)
+    <%= model_resource_name(prefix: "@") %> = <%= model_resource_name %>
+  end
+
+  def view_template
+    content_for :title, "<%= human_name %>"
+
+    if notice.present?
+      render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
+        render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
+
+        span { notice }
+      }
+    end
+
+    render Components::PageHeader.new do |header|
+      header.title_bar { |title_bar|
+        title_bar.leading_action {
+          render Components::WebAwesome::WaIconButton.new(name: "arrow-left", href: <%= index_helper(type: :path) %>, variant: :regular, label: "Back to <%= human_name.pluralize.downcase %>")
+        }
+
+        title_bar.title {
+          # add title
+        }
+      }
+
+      header.actions {
+        render Components::WebAwesome::WaIconButton.new(name: "pen", href: <%= edit_helper(type: :path) %>, variant: :regular, label: "Edit <%= human_name.downcase %>")
+
+        button_to <%= model_resource_name(prefix: "@") %>, method: :delete, data: { turbo_confirm: "Are you sure?" } do
+          render Components::WebAwesome::WaIconButton.new(name: "trash", variant: :regular, label: "Destroy <%= human_name.downcase %>")
+        end
+      }
+    end
+
+    section {
+      # add body here
+    }
+  end
+end

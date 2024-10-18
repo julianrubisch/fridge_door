@@ -1,0 +1,34 @@
+<%%= wa_form_with(model: <%= model_resource_name %>) do |form| %>
+  <%% if <%= singular_table_name %>.errors.any? %>
+    <wa-callout variant="danger" class="mt-2">
+      <wa-icon slot="icon" name="circle-exclamation" variant="regular"></wa-icon>
+      <strong><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</strong>
+
+      <ul>
+        <%% <%= singular_table_name %>.errors.each do |error| %>
+          <li><%%= error.full_message %></li>
+        <%% end %>
+      </ul>
+    </wa-callout>
+  <%% end %>
+
+<% attributes.each do |attribute| -%>
+  <div class="my-4">
+<% if attribute.password_digest? -%>
+    <%%= form.password_field :password %>
+  </div>
+
+  <div class="my-4">
+    <%%= form.password_field :password_confirmation %>
+<% elsif attribute.attachments? -%>
+    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true %>
+<% else -%>
+    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %> %>
+<% end -%>
+  </div>
+
+<% end -%>
+  <div class="my-4">
+    <%%= form.submit %>
+  </div>
+<%% end %>
