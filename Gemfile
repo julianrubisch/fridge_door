@@ -59,6 +59,8 @@ group :development do
 
   gem "phlex_custom_element_generator", github: "konnorrogers/phlex_custom_element_generator"
   gem "prompts", github: "KonnorRogers/prompts", branch: "konnorrogers/fix-fmt-calls"
+
+  gem "letter_opener"
 end
 
 group :test do
