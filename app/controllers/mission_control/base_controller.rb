@@ -17,6 +17,6 @@ module MissionControl
   class BaseController < ActionController::Base
     protect_from_forgery with: :exception
 
-    http_basic_authenticate_with name: MissionControl.username, password: MissionControl.password
+    http_basic_authenticate_with name: MissionControl.username, password: MissionControl.password unless Rails.env.development?
   end
 end

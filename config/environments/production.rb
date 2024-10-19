@@ -55,11 +55,6 @@ Rails.application.configure do
   # Ensure authorization is enabled for the Solid Queue web UI
   config.mission_control.jobs.base_controller_class = "MissionControl::BaseController"
 
-  config.solid_queue.connects_to = { database: { writing: :queue } }
-  # Ensure authorization is enabled for the Solid Queue web UI
-  config.mission_control.jobs.base_controller_class = "MissionControl::BaseController"
-
-
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
