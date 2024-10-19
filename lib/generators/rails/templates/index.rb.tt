@@ -7,8 +7,6 @@ class Views::<%= class_name.pluralize %>::Index < Views::Base
   include Phlex::Rails::Helpers::ButtonTo
   include Phlex::Rails::Helpers::Notice
 
-  register_output_helper :wa_button_to
-
   def initialize(<%= model_resource_name.pluralize %>)
     <%= model_resource_name(prefix: "@").pluralize %> = <%= model_resource_name.pluralize %>
   end

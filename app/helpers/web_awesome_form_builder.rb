@@ -1,11 +1,13 @@
 class WebAwesomeFormBuilder < ActionView::Helpers::FormBuilder
   # General method to handle different input types using wa-input
   def wa_input(method, options = {})
-    @template.content_tag("wa-input", nil, options.merge(name: "#{@object_name}[#{method}]", value: object&.send(method), required: attribute_required_on_model?(object, method)))
+    name = object ? "#{@object_name}[#{method}]" : method
+
+    @template.content_tag("wa-input", nil, options.merge(name:, value: object&.send(method), required: attribute_required_on_model?(object, method)))
   end
 
   def text_field(method, options = {})
-    wa_input(method, options.merge(label: method.to_s.humanize))
+    wa_input(method, options.with_defaults(label: method.to_s.humanize))
   end
 
   # Override the select method to use wa-select
