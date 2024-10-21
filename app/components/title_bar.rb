@@ -2,7 +2,7 @@
 
 class Components::TitleBar < Components::Base
   def view_template(&)
-    div(class: "is-flex is-align-items-center", &)
+    div(class: "is-flex is-justify-content-space-between is-align-items-center", &)
   end
 
   def leading_action(&)
@@ -10,6 +10,10 @@ class Components::TitleBar < Components::Base
   end
 
   def title(&)
-    h1(class: "is-size-3", &)
+    h1(class: "is-size-3-desktop is-size-5-mobile is-size-4-tablet", &)
+  end
+
+  def actions(&)
+    div(class: "is-flex", &)
   end
 end

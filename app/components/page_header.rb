@@ -2,7 +2,7 @@
 
 class Components::PageHeader < Components::Base
   def view_template(&)
-    header(class: "is-flex is-justify-content-space-between is-align-items-baseline", &)
+    header(class: "is-flex is-flex-direction-column", &)
 
     render Components::WebAwesome::WaDivider.new
   end
@@ -11,7 +11,7 @@ class Components::PageHeader < Components::Base
     render TitleBar.new(&)
   end
 
-  def actions(&)
-    div(class: "is-flex", &)
+  def description(&)
+    div(class: "has-text-grey", &)
   end
 end
