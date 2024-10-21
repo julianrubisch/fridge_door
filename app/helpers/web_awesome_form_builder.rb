@@ -1,4 +1,6 @@
 class WebAwesomeFormBuilder < ActionView::Helpers::FormBuilder
+  include ActionView::Helpers::FormOptionsHelper
+
   # General method to handle different input types using wa-input
   def wa_input(method, options = {})
     name = object ? "#{@object_name}[#{method}]" : method
@@ -12,7 +14,7 @@ class WebAwesomeFormBuilder < ActionView::Helpers::FormBuilder
 
   # Override the select method to use wa-select
   def select(method, choices = nil, options = {}, html_options = {}, &block)
-    @template.content_tag("wa-select", options_for_select(choices, object.send(method)), options.merge(name: "#{@object_name}[#{method}]"))
+    @template.content_tag("wa-select", options_for_select(choices, object.send(method)), options.with_defaults(label: method.to_s.humanize).merge(name: "#{@object_name}[#{method}]"))
   end
 
   # Override the text_area method to use wa-textarea
@@ -37,27 +39,27 @@ class WebAwesomeFormBuilder < ActionView::Helpers::FormBuilder
 
   # Override the number_field method to use wa-input with type="number"
   def number_field(method, options = {})
-    wa_input(method, options.merge(type: "number"))
+    wa_input(method, options.with_defaults(label: method.to_s.humanize).merge(type: "number"))
   end
 
   # Override the email_field method to use wa-input with type="email"
   def email_field(method, options = {})
-    wa_input(method, options.merge(type: "email"))
+    wa_input(method, options.with_defaults(label: method.to_s.humanize).merge(type: "email"))
   end
 
   # Override the password_field method to use wa-input with type="password"
   def password_field(method, options = {})
-    wa_input(method, options.merge(type: "password"))
+    wa_input(method, options.with_defaults(label: method.to_s.humanize).merge(type: "password"))
   end
 
   # Override the date_field method to use wa-input with type="date"
   def date_field(method, options = {})
-    wa_input(method, options.merge(type: "date"))
+    wa_input(method, options.with_defaults(label: method.to_s.humanize).merge(type: "date"))
   end
 
   # Override the file_field method to use wa-input with type="file"
   def file_field(method, options = {})
-    wa_input(method, options.merge(type: "file"))
+    wa_input(method, options.with_defaults(label: method.to_s.humanize).merge(type: "file"))
   end
 
   # Add more overrides as needed...
@@ -66,5 +68,25 @@ class WebAwesomeFormBuilder < ActionView::Helpers::FormBuilder
     return unless object
 
     object.class.validators_on(attribute).any? { |v| v.is_a?(ActiveModel::Validations::PresenceValidator) }
+  end
+
+  # overridden from ActionView::Helpers::FormOptionsHelper
+  def options_for_select(container, selected = nil)
+    return container if String === container
+
+    selected, disabled = extract_selected_and_disabled(selected).map do |r|
+      Array(r).map(&:to_s)
+    end
+
+    container.map do |element|
+      html_attributes = option_html_attributes(element)
+      text, value = option_text_and_value(element).map(&:to_s)
+
+      html_attributes[:selected] ||= option_value_selected?(value, selected)
+      html_attributes[:disabled] ||= disabled && option_value_selected?(value, disabled)
+      html_attributes[:value] = value
+
+      tag_builder.content_tag_string(:"wa-option", text, html_attributes)
+    end.join("\n").html_safe
   end
 end
