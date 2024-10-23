@@ -61,6 +61,14 @@ group :development do
   gem "prompts", github: "KonnorRogers/prompts", branch: "konnorrogers/fix-fmt-calls"
 
   gem "letter_opener"
+
+  gem "rack-mini-profiler"
+
+  # For memory profiling
+  gem "memory_profiler"
+
+  # For call-stack profiling flamegraphs
+  gem "stackprof"
 end
 
 group :test do
