@@ -14,6 +14,10 @@ class Components::Layout < Components::Base
       head do
         title { content_for(:title) || Rails.application.name }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
+        meta name: "view-transition", content: "same-origin"
+        meta name: "turbo-refresh-method", content: "morph"
+        meta name: "turbo-refresh-scroll", content: "preserve"
+
         csp_meta_tag
         csrf_meta_tags
         stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.4/dist/themes/default.css"
@@ -50,8 +54,19 @@ JS
            dark_mode_dark_class: "wa-theme-default-dark theme-dark",
            dark_mode_light_class: "wa-theme-default-light theme-light"
          }) do
-        render SiteHeader.new
-        main(class: "container is-max-desktop px-4", &block)
+        div(class: "site-wrapper") do
+          render SiteHeader.new
+
+          main(class: "container is-max-desktop px-4", &block)
+
+          footer(class: "footer mt-6") do
+            div(class: "content has-text-centered") {
+              p {
+                "Weisslich Template by Julian Rubisch"
+              }
+            }
+          end
+        end
       end
     end
   end

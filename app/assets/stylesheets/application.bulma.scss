@@ -44,6 +44,10 @@
 
 // @import 'bulma/bulma';
 
+html, body {
+  height: 100%;
+}
+
 // dark mode
 html.wa-theme-default-dark .only-light,
 html:not(.wa-theme-default-dark) .only-dark {
@@ -66,14 +70,31 @@ html:not(.wa-theme-default-dark) .only-dark {
   --wa-color-brand-on-loud: white;
 
   --wa-color-text-link: var(--wa-color-violet-40);
+
+  --bulma-footer-background-color: var(--wa-color-gray-80);
 }
 
 .wa-theme-default-dark {
+  --wa-color-brand-fill-quiet: var(--wa-color-violet-10);
+  --wa-color-brand-fill-normal: var(--wa-color-violet-20);
+  --wa-color-brand-fill-loud: var(--wa-color-violet-40);
+  --wa-color-brand-border-quiet: var(--wa-color-violet-10);
+  --wa-color-brand-border-normal: var(--wa-color-violet-20);
+  --wa-color-brand-border-loud: var(--wa-color-violet-30);
+  --wa-color-brand-on-quiet: var(--wa-color-violet-70);
+  --wa-color-brand-on-normal: var(--wa-color-violet-80);
+  --wa-color-brand-on-loud: black;
   --wa-color-text-link: var(--wa-color-violet-70);
+
+  --bulma-footer-background-color: var(--wa-color-gray-20);
 }
 
 body {
   font-family: var(--wa-font-family-body);
+}
+
+.site-wrapper {
+  min-height: 100%;
 }
 
 // callouts
