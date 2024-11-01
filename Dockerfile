@@ -52,10 +52,6 @@ RUN bundle install && \
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-# Install sqlpkg extensions
-RUN mkdir .sqlpkg
-RUN bundle exec sqlpkg install
-
 # Copy application code
 COPY . .
 
@@ -76,10 +72,14 @@ FROM base
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
 
+# Install sqlpkg extensions
+RUN bundle exec sqlpkg init
+RUN bundle exec sqlpkg install
+
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp
+    chown -R rails:rails db log storage tmp .sqlpkg
 USER 1000:1000
 
 # Entrypoint prepares the database.
