@@ -4,6 +4,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.10",
+    "@josefarias/hotwire_combobox": "^0.3.2",
     "bulma": "^1.0.2",
     "sass": "^1.79.4",
     "stimulus-vite-helpers": "^3.1.0"

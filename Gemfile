@@ -97,3 +97,6 @@ gem "active_job-performs", "~> 0.3.1"
 gem "active_record-associated_object", "~> 0.8.2"
 
 gem "pagy", "~> 9.1"
+
+# until web awesome gets a proper combobox
+gem "hotwire_combobox"

@@ -1,9 +1,12 @@
-import { Application } from "@hotwired/stimulus"
+import { Application } from "@hotwired/stimulus";
 
-const application = Application.start()
+const application = Application.start();
 
 // Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
+application.debug = false;
+window.Stimulus = application;
 
-export { application }
+import HwComboboxController from "@josefarias/hotwire_combobox";
+application.register("hw-combobox", HwComboboxController);
+
+export { application };

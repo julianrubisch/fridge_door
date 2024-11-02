@@ -6,6 +6,7 @@ class Components::Layout < Components::Base
 
   register_output_helper :vite_client_tag
   register_output_helper :vite_javascript_tag
+  register_output_helper :combobox_style_tag
 
   def view_template(&block)
     doctype
@@ -23,6 +24,8 @@ class Components::Layout < Components::Base
         stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.4/dist/themes/default.css"
         stylesheet_link_tag "application", data_turbo_track: "reload"
         javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.4/dist/webawesome.loader.js", type: "module", async: true, defer: true
+
+        combobox_style_tag
 
         script {
           safe <<~JS
