@@ -2,7 +2,7 @@
 :host,
 .wa-theme-default-light {
   --hw-active-bg-color: #F3F4F6;
-  --hw-border-color: #D1D5DB;
+  --hw-border-color: var(--wa-color-neutral-border-loud);
   --hw-group-color: #57595C;
   --hw-group-bg-color: #FFFFFF;
   --hw-invalid-color: #EF4444;
@@ -47,4 +47,16 @@
   --hw-selection-chip-font-size: 0.875rem;
 
   --hw-visual-viewport-height: 100vh;
+}
+
+.hw-combobox {
+  width: 100%;
+}
+
+.hw-combobox__input {
+  font-family: var(--wa-font-family-body) !important;
+}
+
+.hw-combobox__main__wrapper {
+  padding: 0.6rem var(--wa-space-m);
 }
