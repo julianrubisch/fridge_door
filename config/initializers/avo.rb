@@ -23,8 +23,9 @@ Avo.configure do |config|
 
   ## == Authentication ==
   # config.current_user_method = :current_user
-  # config.authenticate_with do
-  # end
+  config.authenticate_with do
+    redirect_to "/", alert: "You are not authorized to view this resource." unless Session.find_by_id(cookies.signed[:session_token])&.user&.admin?
+  end
 
   ## == Authorization ==
   # config.is_admin_method = :is_admin
