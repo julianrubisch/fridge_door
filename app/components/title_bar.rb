@@ -13,6 +13,10 @@ class Components::TitleBar < Components::Base
     h1(class: "is-size-3-desktop is-size-5-mobile is-size-4-tablet", &)
   end
 
+  def trailing_visual(&)
+    div(class: "is-flex-grow-1 ml-2", &)
+  end
+
   def actions(&)
     div(class: "is-flex", &)
   end
