@@ -46,6 +46,10 @@
 
 @import "./hw_combobox";
 
+:not(:defined) {
+  visibility: hidden;
+}
+
 html, body {
   height: 100%;
 }
