@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0.0.rc1"
+gem "rails", "~> 8"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
@@ -85,7 +85,7 @@ gem "solid_errors", "~> 0.5"
 
 gem "sqlpkg", "~> 0.2.3"
 
-gem "phlex-rails", "2.0.0.beta2"
+gem "phlex-rails", github: "phlex-ruby/phlex-rails" # while Rails 8 support is unreleased
 
 gem "vite_rails"
 
