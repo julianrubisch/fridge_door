@@ -31,14 +31,14 @@ class Views::<%= class_name.pluralize %>::Show < Views::Base
         title_bar.title {
           # add title
         }
-      }
 
-      header.actions {
-        render Components::WebAwesome::WaIconButton.new(name: "pen", href: <%= edit_helper(type: :path) %>, variant: :regular, label: "Edit <%= human_name.downcase %>")
+        title_bar.actions {
+          render Components::WebAwesome::WaIconButton.new(name: "pen", href: <%= edit_helper(type: :path) %>, variant: :regular, label: "Edit <%= human_name.downcase %>")
 
-        button_to <%= model_resource_name(prefix: "@") %>, method: :delete, data: { turbo_confirm: "Are you sure?" } do
-          render Components::WebAwesome::WaIconButton.new(name: "trash", variant: :regular, label: "Destroy <%= human_name.downcase %>")
-        end
+          button_to <%= model_resource_name(prefix: "@") %>, method: :delete, data: { turbo_confirm: "Are you sure?" } do
+            render Components::WebAwesome::WaIconButton.new(name: "trash", variant: :regular, label: "Destroy <%= human_name.downcase %>")
+          end
+        }
       }
     end
 

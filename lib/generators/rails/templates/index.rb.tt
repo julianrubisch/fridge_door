@@ -27,11 +27,12 @@ class Views::<%= class_name.pluralize %>::Index < Views::Base
         title_bar.title {
           # add title
         }
-      }
-      header.actions {
-        render Components::WebAwesome::WaButton.new(appearance: :tinted, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
-          render Components::WebAwesome::WaIcon.new(slot: "prefix", name: "plus", variant: "solid")
-          span { "New <%= human_name.downcase %>" }
+
+        title_bar.actions {
+          render Components::WebAwesome::WaButton.new(appearance: :tinted, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
+            render Components::WebAwesome::WaIcon.new(slot: "prefix", name: "plus", variant: "solid")
+            span { "New <%= human_name.downcase %>" }
+          }
         }
       }
     end
