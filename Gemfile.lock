@@ -154,7 +154,7 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.4.1)
       railties (>= 6.0.0)
-    date (3.3.4)
+    date (3.4.0)
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
@@ -261,14 +261,18 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.1)
-    mission_control-jobs (0.3.3)
-      importmap-rails
+    mission_control-jobs (0.5.0)
+      actioncable (>= 7.1)
+      actionpack (>= 7.1)
+      activejob (>= 7.1)
+      activerecord (>= 7.1)
+      importmap-rails (>= 1.2.1)
       irb (~> 1.13)
-      rails (>= 7.1)
+      railties (>= 7.1)
       stimulus-rails
       turbo-rails
     msgpack (1.7.2)
-    net-imap (0.5.0)
+    net-imap (0.5.1)
       date
       net-protocol
     net-pop (0.1.2)
@@ -282,7 +286,7 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     net-ssh (7.3.0)
-    nio4r (2.7.3)
+    nio4r (2.7.4)
     nokogiri (1.16.7-aarch64-linux)
       racc (~> 1.4)
     nokogiri (1.16.7-arm-linux)
@@ -524,7 +528,7 @@ DEPENDENCIES
   letter_opener
   litestream (~> 0.12.0)
   memory_profiler
-  mission_control-jobs (~> 0.3)
+  mission_control-jobs (~> 0.5)
   pagy (~> 9.2)
   phlex-rails!
   phlex_custom_element_generator!

@@ -77,7 +77,7 @@ group :test do
   gem "selenium-webdriver"
 end
 # Add a web UI for Solid Queue
-gem "mission_control-jobs", "~> 0.3"
+gem "mission_control-jobs", "~> 0.5"
 # Ensure all SQLite databases are backed up
 gem "litestream", "~> 0.12.0"
 # Add Solid Errors for error monitoring
