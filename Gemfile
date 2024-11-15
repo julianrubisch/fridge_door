@@ -77,9 +77,9 @@ group :test do
   gem "selenium-webdriver"
 end
 # Add a web UI for Solid Queue
-gem "mission_control-jobs", "~> 0.3"
+gem "mission_control-jobs", "~> 0.5"
 # Ensure all SQLite databases are backed up
-gem "litestream", "~> 0.11.0"
+gem "litestream", "~> 0.12.0"
 # Add Solid Errors for error monitoring
 gem "solid_errors", "~> 0.5"
 
@@ -96,7 +96,7 @@ gem "active_job-performs", "~> 0.3.1"
 
 gem "active_record-associated_object", "~> 0.8.2"
 
-gem "pagy", "~> 9.1"
+gem "pagy", "~> 9.2"
 
 # until web awesome gets a proper combobox
 gem "hotwire_combobox"
