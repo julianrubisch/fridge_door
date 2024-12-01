@@ -261,7 +261,7 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.2)
-    mission_control-jobs (0.5.0)
+    mission_control-jobs (0.6.0)
       actioncable (>= 7.1)
       actionpack (>= 7.1)
       activejob (>= 7.1)
@@ -528,7 +528,7 @@ DEPENDENCIES
   letter_opener
   litestream (~> 0.12.0)
   memory_profiler
-  mission_control-jobs (~> 0.5)
+  mission_control-jobs (~> 0.6)
   pagy (~> 9.3)
   phlex-rails!
   phlex_custom_element_generator!
