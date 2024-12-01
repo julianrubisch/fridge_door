@@ -20,10 +20,10 @@ GIT
 
 GIT
   remote: https://github.com/phlex-ruby/phlex-rails.git
-  revision: 80388e7c1a5ba53f11e8de45eeb250bb99bc9060
+  revision: 4cd9cb311fc77674b9733a83b12edec3db88e4b4
   specs:
-    phlex-rails (2.0.0.beta2)
-      phlex (= 2.0.0.beta2)
+    phlex-rails (2.0.0.rc1)
+      phlex (= 2.0.0.rc1)
       railties (>= 6.1, < 9)
 
 GEM
@@ -305,7 +305,7 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
-    phlex (2.0.0.beta2)
+    phlex (2.0.0.rc1)
     prop_initializer (0.2.0)
       zeitwerk (>= 2.6.18)
     propshaft (1.1.0)
