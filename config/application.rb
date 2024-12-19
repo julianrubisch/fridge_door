@@ -27,5 +27,6 @@ module Weisslich
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.active_record.strict_loading_mode = :n_plus_one_only
+    config.active_record.async_query_executor = :global_thread_pool
   end
 end
