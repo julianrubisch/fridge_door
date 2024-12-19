@@ -1,9 +1,9 @@
 # Weisslich
 
-A very opinionated, _conceptually compressed_ Rails template
+A very opinionated, _conceptually compressed, web-components-first_ Rails template
 
-- Rails 7.2
-- Litestack (pre-installed)
+- Rails 8
+- solid trifecta via enlitenment
 - Litestream (pre-installed, unconfigured)
 - authentication_zero (pre-installed, unconfigured)
 
@@ -15,16 +15,17 @@ A very opinionated, _conceptually compressed_ Rails template
   - grid
   - layout
 - Web awesome
-  - TODO form builder
+  - with form builder (work in progress)
 - Phlex
 - Propshaft
-- TODO Vite?
+- Vite
 
-- TODO Kamal 2
+- Kamal 2
 
   
 - Interactive setup script
   - TODO ask about sqlite-ulid, sqlite-vec
   - TODO auth zero installer
   - TODO choose icon set: heroicon, tabler, and integrate with web-awesome
+  - TODO wa-pro ?
 
