@@ -14,27 +14,21 @@ class Views::<%= class_name.pluralize %>::Index < Views::Base
   def view_template
     content_for :title, "<%= human_name.pluralize %>"
 
-    if notice.present?
-      render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
-        render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
+    content_for :main_header do
+      render Components::PageHeader.new do |header|
+        header.title_bar { |title_bar|
+          title_bar.title {
+            # add title
+          }
 
-        span { notice }
-      }
-    end
-
-    render Components::PageHeader.new do |header|
-      header.title_bar { |title_bar|
-        title_bar.title {
-          # add title
-        }
-
-        title_bar.actions {
-          render Components::WebAwesome::WaButton.new(appearance: :tinted, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
-            render Components::WebAwesome::WaIcon.new(slot: "prefix", name: "plus", variant: "solid")
-            span { "New <%= human_name.downcase %>" }
+          title_bar.actions {
+            render Components::WebAwesome::WaButton.new(appearance: :tinted, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
+              render Components::WebAwesome::WaIcon.new(slot: "prefix", name: "plus", variant: "solid")
+              span { "New <%= human_name.downcase %>" }
+            }
           }
         }
-      }
+      end
     end
 
     render Components::Grid.new(id: "<%= plural_table_name %>") {

@@ -14,32 +14,26 @@ class Views::<%= class_name.pluralize %>::Show < Views::Base
   def view_template
     content_for :title, "<%= human_name %>"
 
-    if notice.present?
-      render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
-        render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
+    content_for :main_header do
+      render Components::PageHeader.new do |header|
+        header.title_bar { |title_bar|
+          title_bar.leading_action {
+            render Components::WebAwesome::WaIconButton.new(name: "arrow-left", href: <%= index_helper(type: :path) %>, variant: :regular, label: "Back to <%= human_name.pluralize.downcase %>")
+          }
 
-        span { notice }
-      }
-    end
+          title_bar.title {
+            # add title
+          }
 
-    render Components::PageHeader.new do |header|
-      header.title_bar { |title_bar|
-        title_bar.leading_action {
-          render Components::WebAwesome::WaIconButton.new(name: "arrow-left", href: <%= index_helper(type: :path) %>, variant: :regular, label: "Back to <%= human_name.pluralize.downcase %>")
+          title_bar.actions {
+            render Components::WebAwesome::WaIconButton.new(name: "pen", href: <%= edit_helper(type: :path) %>, variant: :regular, label: "Edit <%= human_name.downcase %>")
+
+            button_to <%= model_resource_name(prefix: "@") %>, method: :delete, data: { turbo_confirm: "Are you sure?" } do
+              render Components::WebAwesome::WaIconButton.new(name: "trash", variant: :regular, label: "Destroy <%= human_name.downcase %>")
+            end
+          }
         }
-
-        title_bar.title {
-          # add title
-        }
-
-        title_bar.actions {
-          render Components::WebAwesome::WaIconButton.new(name: "pen", href: <%= edit_helper(type: :path) %>, variant: :regular, label: "Edit <%= human_name.downcase %>")
-
-          button_to <%= model_resource_name(prefix: "@") %>, method: :delete, data: { turbo_confirm: "Are you sure?" } do
-            render Components::WebAwesome::WaIconButton.new(name: "trash", variant: :regular, label: "Destroy <%= human_name.downcase %>")
-          end
-        }
-      }
+      end
     end
 
     section {

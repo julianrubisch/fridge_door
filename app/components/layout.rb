@@ -3,6 +3,7 @@
 class Components::Layout < Components::Base
   include Phlex::Rails::Layout
   include Phlex::Rails::Helpers::ContentFor
+  include Phlex::Rails::Helpers::Notice
 
   register_output_helper :vite_client_tag
   register_output_helper :vite_javascript_tag
@@ -59,6 +60,18 @@ JS
          }) do
         render Components::WebAwesome::WaPage.new do
           header(slot: "header") { render SiteHeader.new }
+
+          header(slot: "main-header", class: "container is-max-desktop") {
+            if notice.present?
+              render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
+                render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
+
+                span { notice }
+              }
+            end
+
+            content_for :main_header
+          }
 
           main(class: "container is-max-desktop", &block)
 

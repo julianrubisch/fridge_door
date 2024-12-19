@@ -121,6 +121,10 @@ main {
   padding: var(--wa-space-m);
 }
 
+[slot="main-header"] {
+  padding: 0 var(--wa-space-m);
+}
+
 // callouts
 wa-callout {
   strong {
