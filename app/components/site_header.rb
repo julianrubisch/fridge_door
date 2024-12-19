@@ -4,7 +4,7 @@ class Components::SiteHeader < Components::Base
   include Phlex::Rails::Helpers::LinkTo
 
   def view_template
-    nav(class: "level") {
+    nav(class: "level is-mobile") {
       ul(class: "level-left") {
         li(class: "level-item mr-4") {
           h1(class: "is-size-4") { Rails.application.name }
