@@ -87,7 +87,7 @@ gem "solid_errors", "~> 0.5"
 
 gem "sqlpkg", "~> 0.2.3"
 
-gem "phlex-rails", github: "phlex-ruby/phlex-rails" # while Rails 8 support is unreleased
+gem "phlex-rails", "2.0.0.rc1"
 
 gem "vite_rails"
 
