@@ -125,6 +125,11 @@ main {
   padding: 0 var(--wa-space-m);
 }
 
+// as long as we use our own hamburger menu...
+wa-page::part(navigation-toggle) {
+  display: none;
+}
+
 // callouts
 wa-callout {
   strong {

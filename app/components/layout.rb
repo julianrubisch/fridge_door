@@ -58,7 +58,7 @@ JS
            dark_mode_dark_class: "wa-theme-default-dark theme-dark",
            dark_mode_light_class: "wa-theme-default-light theme-light"
          }) do
-        render Components::WebAwesome::WaPage.new do
+        render Components::WebAwesome::WaPage.new(disable_navigation_toggle: true) do
           header(slot: "header") { render SiteHeader.new }
 
           header(slot: "main-header", class: "container is-max-desktop") {
