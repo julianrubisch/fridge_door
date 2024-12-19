@@ -18,7 +18,7 @@ module Components
         loading: false,
         name: nil,
         pill: false,
-        rel: "noreferrer noopener",
+        rel: nil,
         size: "medium",
         target: nil,
         title: "",

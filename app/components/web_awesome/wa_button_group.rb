@@ -5,10 +5,12 @@ module Components
 
       def initialize(
         label: "",
+        orientation: "horizontal",
         **attributes
       )
         @attributes = attributes.with_defaults({
-          label: label
+          label: label,
+          orientation: orientation
         })
       end
 

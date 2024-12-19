@@ -6,20 +6,20 @@ module Components
       def initialize(
         disabled: false,
         distance: 8,
-        phor: nil,
+        for: nil,
         hide_delay: 0,
         hoist: false,
         open: false,
-        placement: "top",
+        placement: 'top',
         show_delay: 150,
         skidding: 0,
-        trigger: "hover focus",
+        trigger: 'hover focus',
         **attributes
       )
         @attributes = attributes.with_defaults({
           disabled: disabled,
           distance: distance,
-          for: phor,
+          for: for,
           hide_delay: hide_delay,
           hoist: hoist,
           open: open,
