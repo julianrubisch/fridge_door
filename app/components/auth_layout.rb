@@ -53,29 +53,31 @@ JS
            dark_mode_dark_class: "wa-theme-default-dark theme-dark",
            dark_mode_light_class: "wa-theme-default-light theme-light"
          }) do
-        main(class: "container is-max-desktop px-4 py-6 is-flex is-flex-direction-column is-justify-content-center is-align-items-center") {
-          h1(class: "is-size-2 mb-4") { Rails.application.name }
+        render Components::WebAwesome::WaPage.new do
+          main(class: "container is-max-desktop px-4 py-6 is-flex is-flex-direction-column is-justify-content-center is-align-items-center") {
+            h1(class: "is-size-2 mb-4") { Rails.application.name }
 
-          render Components::WebAwesome::WaCard.new(class: "card-auth") {
-            if notice.present?
-              render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
-                render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
+            render Components::WebAwesome::WaCard.new(class: "card-auth") {
+              if notice.present?
+                render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
+                  render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
 
-                span { notice }
-              }
-            end
+                  span { notice }
+                }
+              end
 
-            if alert.present?
-              render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "danger") {
-                render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-exclamation", variant: :regular)
+              if alert.present?
+                render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "danger") {
+                  render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-exclamation", variant: :regular)
 
-                span { alert }
-              }
-            end
+                  span { alert }
+                }
+              end
 
-            yield
+              yield
+            }
           }
-        }
+        end
       end
     end
   end
