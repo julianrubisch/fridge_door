@@ -69,6 +69,8 @@ group :development do
 
   # For call-stack profiling flamegraphs
   gem "stackprof"
+
+  gem "model_probe"
 end
 
 group :test do
