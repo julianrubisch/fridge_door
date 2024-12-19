@@ -57,12 +57,12 @@ JS
            dark_mode_dark_class: "wa-theme-default-dark theme-dark",
            dark_mode_light_class: "wa-theme-default-light theme-light"
          }) do
-        div(class: "site-wrapper") do
-          render SiteHeader.new
+        render Components::WebAwesome::WaPage.new do
+          header(slot: "header") { render SiteHeader.new }
 
-          main(class: "container is-max-desktop px-4", &block)
+          main(class: "container is-max-desktop", &block)
 
-          footer(class: "footer mt-6") do
+          footer(slot: "footer", class: "footer") do
             div(class: "content has-text-centered") {
               p {
                 "Weisslich Template by Julian Rubisch"

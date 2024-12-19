@@ -117,8 +117,8 @@ body {
   font-family: var(--wa-font-family-body);
 }
 
-.site-wrapper {
-  min-height: 100%;
+main {
+  padding: var(--wa-space-m);
 }
 
 // callouts
