@@ -1,5 +1,23 @@
 // @charset "utf-8";
 
+// see https://www.figma.com/design/y5w1WWKDgoJCIUa4dYuKcA/Harmony%3A-Accessible-UI-Color-Palette-(Community)?t=NmQZ7PSLZ1mK1rlw-0 for available colors
+// @import "@evilmartians/harmony/dist/css/teal";
+// workaround because of Error: This function isn't allowed in plain CSS. 15 │ @supports (color: oklch(0% 0 0)) {
+
+// :root {
+//   --teal-50:#f9fcfa;
+//   --teal-100:#e9f7ef;
+//   --teal-200:#cbebd8;
+//   --teal-300:#9fdcba;
+//   --teal-400:#6ecc9d;
+//   --teal-500:#23bc7f;
+//   --teal-600:#009662;
+//   --teal-700:#00794e;
+//   --teal-800:#005636;
+//   --teal-900:#003520;
+//   --teal-950:#00180c;
+// }
+
 // Import a Google Font
 // @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
