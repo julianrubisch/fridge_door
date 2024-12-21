@@ -7,7 +7,7 @@ module Components
         disabled: false,
         form: nil,
         format: "hex",
-        help_text: "",
+        hint: "",
         hoist: false,
         label: "",
         name: nil,
@@ -18,7 +18,7 @@ module Components
         swatches: "",
         uppercase: false,
         value: nil,
-        with_help_text: false,
+        with_hint: false,
         with_label: false,
         **attributes
       )
@@ -26,7 +26,7 @@ module Components
           disabled: disabled,
           form: form,
           format: format,
-          help_text: help_text,
+          hint: hint,
           hoist: hoist,
           label: label,
           name: name,
@@ -37,7 +37,7 @@ module Components
           swatches: swatches,
           uppercase: uppercase,
           value: value,
-          with_help_text: with_help_text,
+          with_hint: with_hint,
           with_label: with_label
         })
       end

@@ -4,7 +4,7 @@ module Components
       register_element :wa_button
 
       def initialize(
-        appearance: "filled",
+        appearance: "accent",
         caret: false,
         disabled: false,
         download: nil,

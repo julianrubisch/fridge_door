@@ -18,7 +18,7 @@ class Components::SiteHeader < Components::Base
                                             controller: "radio-dropdown",
                                             action: "dark-mode:change@document->radio-dropdown#updateSelection",
                                             radio_dropdown_key_value: "colorScheme" }) do |dropdown|
-          render WebAwesome::WaButton.new(slot: :trigger, appearance: :tinted, size: :small, pill: true, caret: true) do |button|
+          render WebAwesome::WaButton.new(slot: :trigger, appearance: :filled, size: :small, pill: true, caret: true) do |button|
             render WebAwesome::WaIcon.new(slot: "prefix", name: "sun", variant: "solid", class: "only-light")
             render WebAwesome::WaIcon.new(slot: "prefix", name: "moon", variant: "solid", class: "only-dark")
             span(class: "only-light") { "Light" }

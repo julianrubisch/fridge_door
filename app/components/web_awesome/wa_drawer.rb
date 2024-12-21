@@ -5,7 +5,7 @@ module Components
 
       def initialize(
         label: "",
-        light_dismiss: false,
+        light_dismiss: true,
         open: false,
         placement: "end",
         with_footer: false,

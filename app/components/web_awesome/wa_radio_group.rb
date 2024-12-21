@@ -4,24 +4,24 @@ module Components
       register_element :wa_radio_group
 
       def initialize(
-        help_text: "",
+        hint: "",
         label: "",
         name: nil,
         required: false,
         size: "medium",
         value: nil,
-        with_help_text: false,
+        with_hint: false,
         with_label: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          help_text: help_text,
+          hint: hint,
           label: label,
           name: name,
           required: required,
           size: size,
           value: value,
-          with_help_text: with_help_text,
+          with_hint: with_hint,
           with_label: with_label
         })
       end

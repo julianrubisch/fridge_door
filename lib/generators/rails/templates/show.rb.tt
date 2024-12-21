@@ -5,7 +5,6 @@ class Views::<%= class_name.pluralize %>::Show < Views::Base
   include Phlex::Rails::Helpers::ContentFor
   include Phlex::Rails::Helpers::DOMID
   include Phlex::Rails::Helpers::ButtonTo
-  include Phlex::Rails::Helpers::Notice
 
   def initialize(<%= model_resource_name %>)
     <%= model_resource_name(prefix: "@") %> = <%= model_resource_name %>

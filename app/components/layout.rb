@@ -24,9 +24,10 @@ class Components::Layout < Components::Base
         csrf_meta_tags
 
         combobox_style_tag
-        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.5/dist/themes/default.css"
+        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/styles/themes/default.css"
+        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/styles/webawesome.css"
         stylesheet_link_tag "application", data_turbo_track: "reload"
-        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.5/dist/webawesome.loader.js", type: "module", async: true, defer: true
+        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/webawesome.loader.js", type: "module", async: true, defer: true
 
         script {
           safe <<~JS
@@ -76,7 +77,7 @@ JS
           main(class: "container is-max-desktop", &block)
 
           footer(slot: "footer", class: "footer") do
-            div(class: "content has-text-centered") {
+            div(class: "has-text-centered") {
               p {
                 "Weisslich Template by Julian Rubisch"
               }

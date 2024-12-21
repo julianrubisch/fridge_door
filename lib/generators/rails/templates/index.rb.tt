@@ -5,7 +5,6 @@ class Views::<%= class_name.pluralize %>::Index < Views::Base
   include Phlex::Rails::Helpers::ContentFor
   include Phlex::Rails::Helpers::DOMID
   include Phlex::Rails::Helpers::ButtonTo
-  include Phlex::Rails::Helpers::Notice
 
   def initialize(<%= model_resource_name.pluralize %>)
     <%= model_resource_name(prefix: "@").pluralize %> = <%= model_resource_name.pluralize %>
@@ -22,7 +21,7 @@ class Views::<%= class_name.pluralize %>::Index < Views::Base
           }
 
           title_bar.actions {
-            render Components::WebAwesome::WaButton.new(appearance: :tinted, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
+            render Components::WebAwesome::WaButton.new(appearance: :filled, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
               render Components::WebAwesome::WaIcon.new(slot: "prefix", name: "plus", variant: "solid")
               span { "New <%= human_name.downcase %>" }
             }

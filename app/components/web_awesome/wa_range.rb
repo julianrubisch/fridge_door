@@ -6,7 +6,7 @@ module Components
       def initialize(
         disabled: false,
         form: nil,
-        help_text: "",
+        hint: "",
         label: "",
         max: 100,
         min: 0,
@@ -15,14 +15,14 @@ module Components
         title: "",
         tooltip: "top",
         value: nil,
-        with_help_text: false,
+        with_hint: false,
         with_label: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
           disabled: disabled,
           form: form,
-          help_text: help_text,
+          hint: hint,
           label: label,
           max: max,
           min: min,
@@ -31,7 +31,7 @@ module Components
           title: title,
           tooltip: tooltip,
           value: value,
-          with_help_text: with_help_text,
+          with_hint: with_hint,
           with_label: with_label
         })
       end

@@ -4,12 +4,14 @@ module Components
       register_element :wa_badge
 
       def initialize(
+        appearance: "accent",
         pill: false,
         pulse: false,
         variant: "brand",
         **attributes
       )
         @attributes = attributes.with_defaults({
+          appearance: appearance,
           pill: pill,
           pulse: pulse,
           variant: variant
