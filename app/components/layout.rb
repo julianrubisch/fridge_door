@@ -62,9 +62,9 @@ JS
         render Components::WebAwesome::WaPage.new(disable_navigation_toggle: true) do
           header(slot: "header") { render SiteHeader.new }
 
-          header(slot: "main-header", class: "container is-max-desktop") {
+          header(slot: "main-header", class: "container is-max-desktop wa-stack wa-gap-xl") {
             if notice.present?
-              render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
+              render Components::WebAwesome::WaCallout.new(variant: "success") {
                 render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
 
                 span { notice }
@@ -74,7 +74,7 @@ JS
             content_for :main_header
           }
 
-          main(class: "container is-max-desktop", &block)
+          main(class: "container is-max-desktop wa-stack wa-gap-xl", &block)
 
           footer(slot: "footer", class: "footer") do
             div(class: "has-text-centered") {

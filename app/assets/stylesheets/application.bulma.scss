@@ -168,3 +168,21 @@ wa-card.card-auth {
   width: 30rem;
   max-width: 100%;
 }
+
+// page header
+.page-header {
+  .description {
+    --wa-font-weight-heading: var(--wa-font-weight-semibold);
+  }
+}
+
+// title bar
+.title-bar {
+  h1 {
+    font-size: var(--wa-font-size-l);
+
+    @media(min-width: 48em) {
+      font-size: var(--wa-font-size-2xl);
+    }
+  }
+}
