@@ -4,17 +4,17 @@ class Components::SiteHeader < Components::Base
   include Phlex::Rails::Helpers::LinkTo
 
   def view_template
-    nav(class: "level is-mobile") {
-      ul(class: "level-left") {
-        li(class: "level-item mr-4") {
-          h1(class: "is-size-4") { Rails.application.name }
+    nav(class: "wa-split is-mobile") {
+      ul(class: "wa-flank wa-gap-m") {
+        li {
+          h1(class: "wa-heading-l is-flex wa-align-items-center") { Rails.application.name }
         }
-        li(class: "level-item is-hidden-touch") {
+        li(class: "is-hidden-touch") {
           # add main nav here
         }
       }
-      div(class: "level-right") {
-        render WebAwesome::WaDropdown.new(placement: "bottom-start", class: "level-item is-hidden-mobile", data: {
+      div(class: "wa-cluster wa-gap-xs") {
+        render WebAwesome::WaDropdown.new(placement: "bottom-start", class: "is-hidden-mobile", data: {
                                             controller: "radio-dropdown",
                                             action: "dark-mode:change@document->radio-dropdown#updateSelection",
                                             radio_dropdown_key_value: "colorScheme" }) do |dropdown|
@@ -33,7 +33,7 @@ class Components::SiteHeader < Components::Base
           end
         end
 
-        render WebAwesome::WaDropdown.new(placement: "bottom-start", class: "level-item") do |dropdown|
+        render WebAwesome::WaDropdown.new(placement: "bottom-start") do |dropdown|
           render WebAwesome::WaIconButton.new(slot: :trigger, name: "bars")
 
           render WebAwesome::WaMenu.new do
@@ -44,7 +44,7 @@ class Components::SiteHeader < Components::Base
             # render WebAwesome::WaMenuItem.new do
             #   render WebAwesome::WaIcon.new(slot: "prefix", name: "right-from-bracket", variant: "solid")
 
-            #   button_to "Log out", Current.session, method: :delete
+            #   link_to "Log out", Current.session, data: { turbo_method: :delete }
             # end
           end
         end
