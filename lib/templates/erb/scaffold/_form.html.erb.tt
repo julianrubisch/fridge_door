@@ -1,6 +1,6 @@
-<%%= wa_form_with(model: <%= model_resource_name %>) do |form| %>
+<%%= wa_form_with(model: <%= model_resource_name %>, html: {class: "wa-stack"}) do |form| %>
   <%% if <%= singular_table_name %>.errors.any? %>
-    <wa-callout variant="danger" class="mt-2">
+    <wa-callout variant="danger">
       <wa-icon slot="icon" name="circle-exclamation" variant="regular"></wa-icon>
       <strong><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</strong>
 
@@ -13,12 +13,12 @@
   <%% end %>
 
 <% attributes.each do |attribute| -%>
-  <div class="my-4">
+  <div class="wa-stack wa-gap-0">
 <% if attribute.password_digest? -%>
     <%%= form.password_field :password %>
   </div>
 
-  <div class="my-4">
+  <div class="wa-stack wa-gap-0">
     <%%= form.password_field :password_confirmation %>
 <% elsif attribute.attachments? -%>
     <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true %>
@@ -28,7 +28,7 @@
   </div>
 
 <% end -%>
-  <div class="my-4">
+  <div>
     <%%= form.submit %>
   </div>
 <%% end %>

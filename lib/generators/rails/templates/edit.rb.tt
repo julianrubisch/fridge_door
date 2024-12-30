@@ -12,14 +12,16 @@ class Views::<%= class_name.pluralize %>::Edit < Views::Base
   def view_template
     content_for :title, "Editing <%= human_name.downcase %>"
 
-    render Components::PageHeader.new do |header|
-      header.title_bar { |title_bar|
-        title_bar.leading_action {
-          render Components::WebAwesome::WaIconButton.new(name: "arrow-left", href: <%= index_helper(type: :path) %>, variant: :regular, label: "Back to <%= human_name.pluralize.downcase %>")
-        }
+    content_for :main_header do
+      render Components::PageHeader.new do |header|
+        header.title_bar { |title_bar|
+          title_bar.leading_action {
+            render Components::WebAwesome::WaIconButton.new(name: "arrow-left", href: <%= index_helper(type: :path) %>, variant: :regular, label: "Back to <%= human_name.pluralize.downcase %>")
+          }
 
-        title_bar.title { "Editing <%= human_name.downcase %>" }
-      } 
+          title_bar.title { "Editing <%= human_name.downcase %>" }
+        }
+      end
     end
 
     section {
