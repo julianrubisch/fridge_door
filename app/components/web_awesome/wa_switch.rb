@@ -7,26 +7,26 @@ module Components
         checked: nil,
         disabled: false,
         form: nil,
-        help_text: "",
+        hint: "",
         name: nil,
         required: false,
         size: "medium",
         title: "",
         value: nil,
-        with_help_text: false,
+        with_hint: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
           checked: checked,
           disabled: disabled,
           form: form,
-          help_text: help_text,
+          hint: hint,
           name: name,
           required: required,
           size: size,
           title: title,
           value: value,
-          with_help_text: with_help_text
+          with_hint: with_hint
         })
       end
 

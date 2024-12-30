@@ -4,15 +4,15 @@ module Components
       register_element :wa_input
 
       def initialize(
+        appearance: "outlined",
         autocapitalize: nil,
         autocomplete: nil,
         autocorrect: nil,
         autofocus: nil,
         clearable: false,
         enterkeyhint: nil,
-        filled: false,
         form: nil,
-        help_text: "",
+        hint: "",
         inputmode: nil,
         label: "",
         max: nil,
@@ -33,20 +33,20 @@ module Components
         title: "",
         type: "text",
         value: nil,
-        with_help_text: false,
+        with_hint: false,
         with_label: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
+          appearance: appearance,
           autocapitalize: autocapitalize,
           autocomplete: autocomplete,
           autocorrect: autocorrect,
           autofocus: autofocus,
           clearable: clearable,
           enterkeyhint: enterkeyhint,
-          filled: filled,
           form: form,
-          help_text: help_text,
+          hint: hint,
           inputmode: inputmode,
           label: label,
           max: max,
@@ -67,7 +67,7 @@ module Components
           title: title,
           type: type,
           value: value,
-          with_help_text: with_help_text,
+          with_hint: with_hint,
           with_label: with_label
         })
       end

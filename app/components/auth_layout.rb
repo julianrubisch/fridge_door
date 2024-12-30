@@ -19,9 +19,9 @@ class Components::AuthLayout < Components::Base
         meta name: "viewport", content: "width=device-width,initial-scale=1"
         csp_meta_tag
         csrf_meta_tags
-        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.5/dist/themes/default.css"
+        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/styles/themes/default.css"
         stylesheet_link_tag "application", data_turbo_track: "reload"
-        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.5/dist/webawesome.loader.js", type: "module", async: true, defer: true
+        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/webawesome.loader.js", type: "module", async: true, defer: true
 
         script {
           safe <<~JS
@@ -54,26 +54,31 @@ JS
            dark_mode_light_class: "wa-theme-default-light theme-light"
          }) do
         render Components::WebAwesome::WaPage.new(disable_navigation_toggle: true) do
-          main(class: "container is-max-desktop px-4 py-6 is-flex is-flex-direction-column is-justify-content-center is-align-items-center") {
-            h1(class: "is-size-2 mb-4") { Rails.application.name }
+          main(class: "container is-max-desktop wa-stack wa-align-items-center wa-gap-l") {
+            div(class: "wa-stack wa-align-items-center wa-gap-xs") {
+              div(class: "wa-stack wa-gap-xl") {
+                # insert logo here
+
+                h1(class: "is-size-2 mb-4") { Rails.application.name }
+                if notice.present?
+                  render Components::WebAwesome::WaCallout.new(variant: "success") {
+                    render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
+
+                    span { notice }
+                  }
+                end
+
+                if alert.present?
+                  render Components::WebAwesome::WaCallout.new(variant: "danger") {
+                    render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-exclamation", variant: :regular)
+
+                    span { alert }
+                  }
+                end
+              }
+            }
 
             render Components::WebAwesome::WaCard.new(class: "card-auth") {
-              if notice.present?
-                render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "success") {
-                  render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-check", variant: :regular)
-
-                  span { notice }
-                }
-              end
-
-              if alert.present?
-                render Components::WebAwesome::WaCallout.new(class: "mb-4", variant: "danger") {
-                  render Components::WebAwesome::WaIcon.new(slot: "icon", name: "circle-exclamation", variant: :regular)
-
-                  span { alert }
-                }
-              end
-
               yield
             }
           }

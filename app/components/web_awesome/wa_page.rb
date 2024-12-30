@@ -5,7 +5,7 @@ module Components
 
       def initialize(
         disable_navigation_toggle: false,
-        mobile_breakpoint: 768,
+        mobile_breakpoint: "768px",
         nav_open: false,
         navigation_placement: "start",
         view: "desktop",

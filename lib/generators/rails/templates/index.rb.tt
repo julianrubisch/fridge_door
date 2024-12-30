@@ -5,7 +5,6 @@ class Views::<%= class_name.pluralize %>::Index < Views::Base
   include Phlex::Rails::Helpers::ContentFor
   include Phlex::Rails::Helpers::DOMID
   include Phlex::Rails::Helpers::ButtonTo
-  include Phlex::Rails::Helpers::Notice
 
   def initialize(<%= model_resource_name.pluralize %>)
     <%= model_resource_name(prefix: "@").pluralize %> = <%= model_resource_name.pluralize %>
@@ -22,7 +21,7 @@ class Views::<%= class_name.pluralize %>::Index < Views::Base
           }
 
           title_bar.actions {
-            render Components::WebAwesome::WaButton.new(appearance: :tinted, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
+            render Components::WebAwesome::WaButton.new(appearance: :filled, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
               render Components::WebAwesome::WaIcon.new(slot: "prefix", name: "plus", variant: "solid")
               span { "New <%= human_name.downcase %>" }
             }
@@ -38,12 +37,12 @@ class Views::<%= class_name.pluralize %>::Index < Views::Base
             # add card body
           }
 
-          div(slot: "footer", class: "is-flex is-justify-content-space-between is-align-items-center") {
+          div(slot: "footer", class: "wa-split wa-align-items-center") {
             render Components::WebAwesome::WaButton.new(appearance: :outlined, variant: :brand, href: <%= show_helper(singular_table_name, type: :path) %>) {
               "More Info"
             }
 
-            div(class: "is-flex") {
+            div(class: "wa-cluster") {
               render Components::WebAwesome::WaIconButton.new(name: "pen", href: <%= edit_helper(singular_table_name, type: :path) %>, variant: :regular, label: "Edit <%= human_name.downcase %>")
 
               button_to <%= model_resource_name %>, method: :delete, data: { turbo_confirm: "Are you sure?" } do

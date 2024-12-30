@@ -4,12 +4,11 @@ module Components
       register_element :wa_select
 
       def initialize(
+        appearance: "outlined",
         clearable: false,
         disabled: false,
-        filled: false,
         form: nil,
-        getTag: nil,
-        help_text: "",
+        hint: "",
         hoist: false,
         label: "",
         max_options_visible: 3,
@@ -22,17 +21,16 @@ module Components
         required: false,
         size: "medium",
         value: nil,
-        with_help_text: false,
+        with_hint: false,
         with_label: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
+          appearance: appearance,
           clearable: clearable,
           disabled: disabled,
-          filled: filled,
           form: form,
-          getTag: getTag,
-          help_text: help_text,
+          hint: hint,
           hoist: hoist,
           label: label,
           max_options_visible: max_options_visible,
@@ -45,7 +43,7 @@ module Components
           required: required,
           size: size,
           value: value,
-          with_help_text: with_help_text,
+          with_hint: with_hint,
           with_label: with_label
         })
       end

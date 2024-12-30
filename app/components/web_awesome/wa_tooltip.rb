@@ -10,10 +10,10 @@ module Components
         hide_delay: 0,
         hoist: false,
         open: false,
-        placement: 'top',
+        placement: "top",
         show_delay: 150,
         skidding: 0,
-        trigger: 'hover focus',
+        trigger: "hover focus",
         **attributes
       )
         @attributes = attributes.with_defaults({

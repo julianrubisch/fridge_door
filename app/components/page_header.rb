@@ -2,7 +2,7 @@
 
 class Components::PageHeader < Components::Base
   def view_template(&)
-    header(class: "is-flex is-flex-direction-column", &)
+    div(class: "page-header wa-stack wa-gap-xs", &)
 
     render Components::WebAwesome::WaDivider.new
   end
@@ -12,6 +12,6 @@ class Components::PageHeader < Components::Base
   end
 
   def description(&)
-    div(class: "has-text-grey", &)
+    div(class: "description has-text-grey wa-heading-s", &)
   end
 end
