@@ -2,7 +2,7 @@
 
 class Components::PageHeader < Components::Base
   def view_template(&)
-    header(class: "page-header wa-stack wa-gap-xs", &)
+    div(class: "page-header wa-stack wa-gap-xs", &)
 
     render Components::WebAwesome::WaDivider.new
   end
