@@ -103,7 +103,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
     authentication-zero (4.0.3)
-    avo (3.15.4)
+    avo (3.15.7)
       actionview (>= 6.1)
       active_link_to
       activerecord (>= 6.1)
@@ -478,7 +478,7 @@ GEM
     unicode-version (1.4.0)
     uri (1.0.2)
     useragent (0.16.11)
-    view_component (3.20.0)
+    view_component (3.21.0)
       activesupport (>= 5.2.0, < 8.1)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
