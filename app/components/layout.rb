@@ -70,7 +70,7 @@ JS
               }
             end
 
-            content_for :main_header
+            yield :main_header
           }
 
           main(class: "container is-max-desktop wa-stack wa-gap-xl", &block)
