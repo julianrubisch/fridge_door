@@ -1,4 +1,4 @@
-// @charset "utf-8";
+@charset "utf-8";
 
 // see https://www.figma.com/design/y5w1WWKDgoJCIUa4dYuKcA/Harmony%3A-Accessible-UI-Color-Palette-(Community)?t=NmQZ7PSLZ1mK1rlw-0 for available colors
 // @import "@evilmartians/harmony/dist/css/teal";
@@ -45,18 +45,58 @@
 
 // Import only what you need from Bulma
 @import "bulma/sass/utilities";
-@import "bulma/sass/base";
+
+@layer minireset, wa-native-base, wa-native, wa-utilities;
+
+/* Native styles */
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/styles/native/base.css') layer(wa-native-base);
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/styles/native.css') layer(wa-native);
+/* CSS Utilities */
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/styles/utilities.css') layer(wa-utilities);
+
+@layer wa-native {
+  .wa-native-off,
+  .wa-native-off-deep,
+  .wa-native-off-deep * {
+    all: revert-layer;
+  }
+}
+
+@layer wa-utilities {
+  .wa-off,
+  .wa-off-deep,
+  .wa-off-deep * {
+    all: revert-layer;
+  }
+}
+
+/* Web Awesome components */
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.7/dist/styles/components/page.css');
+
+
+@layer minireset {
+  @import "./minireset";
+
+  .minireset-off {
+    all: revert-layer;
+  }
+}
+
+// @import "bulma/sass/base/generic";
+
 @import "bulma/sass/helpers";
 @import "bulma/sass/themes";
 
-@import "bulma/sass/grid";
+// TODO only use needed modules
 @import "bulma/sass/layout";
+// @import "bulma/sass/layout/container";
+// @import "bulma/sass/layout/footer";
+// @import "bulma/sass/layout/hero";
+// @import "bulma/sass/layout/level";
+// @import "bulma/sass/layout/media";
+// @import "bulma/sass/layout/section";
 
-// @import "bulma/sass/elements/button.sass";
-// @import "bulma/sass/elements/container.sass";
-// @import "bulma/sass/elements/title.sass";
-// @import "bulma/sass/form/_all.sass";
-// @import "bulma/sass/components/navbar.sass";
+
 // @import "bulma/sass/layout/hero.sass";
 // @import "bulma/sass/layout/section.sass";
 
