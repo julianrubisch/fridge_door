@@ -4,6 +4,7 @@ module Components
       register_element :wa_tag
 
       def initialize(
+        appearance: "outlined filled",
         pill: false,
         removable: false,
         size: "medium",
@@ -11,6 +12,7 @@ module Components
         **attributes
       )
         @attributes = attributes.with_defaults({
+          appearance: appearance,
           pill: pill,
           removable: removable,
           size: size,

@@ -4,10 +4,14 @@ module Components
       register_element :wa_callout
 
       def initialize(
+        appearance: "outlined filled",
+        size: "medium",
         variant: "brand",
         **attributes
       )
         @attributes = attributes.with_defaults({
+          appearance: appearance,
+          size: size,
           variant: variant
         })
       end
