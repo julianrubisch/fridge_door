@@ -19,7 +19,6 @@ class Components::TitleBar < Components::Base
 
   def actions(&)
     div(class: "wa-flank:end") {
-      div # note: this is to make flex-grow work properly
       div(class: "wa-cluster wa-gap-0", &)
     }
   end
