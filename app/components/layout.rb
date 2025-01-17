@@ -39,10 +39,10 @@ class Components::Layout < Components::Base
             }
 
             if("colorScheme" in localStorage) {
-              document.documentElement.classList.toggle("wa-theme-default-dark", isDark(localStorage.colorScheme));
+              document.documentElement.classList.toggle("wa-dark", isDark(localStorage.colorScheme));
               document.documentElement.classList.toggle("theme-dark", isDark(localStorage.colorScheme));
 
-              document.documentElement.classList.toggle("wa-theme-default-light", !isDark(localStorage.colorScheme));
+              document.documentElement.classList.toggle("wa-light", !isDark(localStorage.colorScheme));
               document.documentElement.classList.toggle("theme-light", !isDark(localStorage.colorScheme));
             }
 JS
@@ -55,8 +55,8 @@ JS
       body(data: {
            controller: "dark-mode",
            action: "dark-mode:change->dark-mode#updateColorScheme",
-           dark_mode_dark_class: "wa-theme-default-dark theme-dark",
-           dark_mode_light_class: "wa-theme-default-light theme-light"
+           dark_mode_dark_class: "wa-dark theme-dark",
+           dark_mode_light_class: "wa-light theme-light"
          }) do
         render Components::WebAwesome::WaPage.new(disable_navigation_toggle: true) do
           header(slot: "header") { render SiteHeader.new }

@@ -50,8 +50,8 @@ JS
       body(data: {
            controller: "dark-mode",
            action: "dark-mode:change->dark-mode#updateColorScheme",
-           dark_mode_dark_class: "wa-theme-default-dark theme-dark",
-           dark_mode_light_class: "wa-theme-default-light theme-light"
+           dark_mode_dark_class: "wa-dark theme-dark",
+           dark_mode_light_class: "wa-light theme-light"
          }) do
         render Components::WebAwesome::WaPage.new(disable_navigation_toggle: true) do
           main(class: "container is-max-desktop wa-stack wa-align-items-center wa-gap-l") {
