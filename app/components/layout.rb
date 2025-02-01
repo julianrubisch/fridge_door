@@ -24,9 +24,9 @@ class Components::Layout < Components::Base
         csrf_meta_tags
 
         combobox_style_tag
-        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.9/dist/styles/themes/default.css"
+        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/styles/themes/default.css"
         stylesheet_link_tag "application", data_turbo_track: "reload"
-        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.9/dist/webawesome.loader.js", type: "module", async: true, defer: true
+        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/webawesome.loader.js", type: "module", async: true, defer: true
 
         script {
           safe <<~JS

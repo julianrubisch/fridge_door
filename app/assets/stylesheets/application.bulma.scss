@@ -49,10 +49,10 @@
 @layer minireset, wa-native-base, wa-native, wa-utilities;
 
 /* Native styles */
-@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.9/dist/styles/native/base.css') layer(wa-native-base);
-@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.9/dist/styles/native.css') layer(wa-native);
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/styles/native/base.css') layer(wa-native-base);
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/styles/native.css') layer(wa-native);
 /* CSS Utilities */
-@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.9/dist/styles/utilities.css') layer(wa-utilities);
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/styles/utilities.css') layer(wa-utilities);
 
 @layer wa-native {
   .wa-native-off,
@@ -70,8 +70,11 @@
   }
 }
 
+/* FOUCE reduction */
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/styles/utilities/fouce.css');
+
 /* Web Awesome components */
-@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.9/dist/styles/components/page.css');
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/styles/components/page.css');
 
 
 @layer minireset {
@@ -103,10 +106,6 @@
 // @import 'bulma/bulma';
 
 @import "./hw_combobox";
-
-:not(:defined) {
-  visibility: hidden;
-}
 
 html, body {
   height: 100%;
