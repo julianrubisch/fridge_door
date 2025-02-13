@@ -69,7 +69,7 @@ GEM
     active_link_to (1.0.5)
       actionpack
       addressable
-    active_record-associated_object (0.8.3)
+    active_record-associated_object (0.9.1)
       activerecord (>= 6.1)
     activejob (8.0.1)
       activesupport (= 8.0.1)
@@ -241,7 +241,7 @@ GEM
       railties (>= 7.0)
       sqlite3
     logfmt (0.0.10)
-    logger (1.6.5)
+    logger (1.6.6)
     loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -537,7 +537,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_job-performs (~> 0.3.2)
-  active_record-associated_object (~> 0.8.3)
+  active_record-associated_object (~> 0.9.1)
   authentication-zero (~> 4.0)
   avo (>= 3.2)
   bootsnap
