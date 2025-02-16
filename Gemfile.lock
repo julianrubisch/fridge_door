@@ -1,21 +1,9 @@
 GIT
-  remote: https://github.com/KonnorRogers/prompts.git
-  revision: dc344cb0c71655fe40d1e915233b04ed41daed19
-  branch: konnorrogers/fix-fmt-calls
-  specs:
-    prompts (0.2.1)
-      fmt (>= 0.3.0)
-      rainbow
-      reline
-      unicode-display_width
-      unicode-emoji
-
-GIT
   remote: https://github.com/konnorrogers/phlex_custom_element_generator.git
-  revision: f21050318c6b70e1e082d40e2f39635000a15248
+  revision: 7b3a8cc0f42d1fb318fec0535a41be68bee8ab82
   specs:
     phlex_custom_element_generator (0.1.0)
-      prompts (~> 0.2)
+      prompts (~> 0.3)
       thor
 
 GEM
@@ -162,7 +150,7 @@ GEM
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
-    fmt (0.3.3)
+    fmt (0.3.5)
       ast
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
@@ -319,6 +307,12 @@ GEM
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
+    prompts (0.3.1)
+      fmt (>= 0.3.0)
+      rainbow
+      reline
+      unicode-display_width
+      unicode-emoji
     prop_initializer (0.2.0)
       zeitwerk (>= 2.6.18)
     propshaft (1.1.0)
@@ -482,9 +476,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    unicode-emoji (3.7.0)
-      unicode-version (~> 1.0)
-    unicode-version (1.4.0)
+    unicode-emoji (4.0.4)
     universalid (0.1.7)
       activesupport (>= 6.1)
       brotli (>= 0.4)
@@ -555,7 +547,7 @@ DEPENDENCIES
   pagy (~> 9.3)
   phlex-rails (= 2.0.0.rc1)
   phlex_custom_element_generator!
-  prompts!
+  prompts
   propshaft
   puma (>= 5.0)
   rack-mini-profiler
