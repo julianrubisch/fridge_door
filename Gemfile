@@ -96,7 +96,7 @@ gem "avo", ">= 3.2"
 
 gem "active_job-performs", "~> 0.3.2"
 
-gem "active_record-associated_object", "~> 0.8.3"
+gem "active_record-associated_object", "~> 0.9.1"
 
 gem "pagy", "~> 9.3"
 
