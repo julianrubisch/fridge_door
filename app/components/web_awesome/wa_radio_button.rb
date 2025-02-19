@@ -7,7 +7,7 @@ module Components
         disabled: false,
         form: nil,
         pill: false,
-        size: "medium",
+        size: "inherit",
         value: nil,
         with_label: false,
         with_prefix: false,

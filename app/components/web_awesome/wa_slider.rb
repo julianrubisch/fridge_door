@@ -1,27 +1,35 @@
 module Components
   module WebAwesome
-    class WaRadioGroup < Phlex::HTML
-      register_element :wa_radio_group
+    class WaSlider < Phlex::HTML
+      register_element :wa_slider
 
       def initialize(
+        disabled: false,
+        form: nil,
         hint: "",
         label: "",
-        name: nil,
-        orientation: "vertical",
-        required: false,
-        size: "inherit",
+        max: 100,
+        min: 0,
+        name: "",
+        step: 1,
+        title: "",
+        tooltip: "top",
         value: nil,
         with_hint: false,
         with_label: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
+        disabled: disabled,
+          form: form,
           hint: hint,
           label: label,
+          max: max,
+          min: min,
           name: name,
-          orientation: orientation,
-          required: required,
-          size: size,
+          step: step,
+          title: title,
+          tooltip: tooltip,
           value: value,
           with_hint: with_hint,
           with_label: with_label
@@ -29,7 +37,7 @@ module Components
       end
 
       def view_template(&)
-        wa_radio_group(**@attributes, &)
+        wa_slider(**@attributes, &)
       end
     end
   end

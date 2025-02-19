@@ -10,6 +10,7 @@ module Components
         max: 5,
         precision: 1,
         readonly: false,
+        size: "inherit",
         value: 0,
         **attributes
       )
@@ -20,6 +21,7 @@ module Components
           max: max,
           precision: precision,
           readonly: readonly,
+          size: size,
           value: value
         })
       end

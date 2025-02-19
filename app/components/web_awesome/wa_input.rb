@@ -27,7 +27,7 @@ module Components
         placeholder: "",
         readonly: false,
         required: false,
-        size: "medium",
+        size: "inherit",
         spellcheck: true,
         step: nil,
         title: "",

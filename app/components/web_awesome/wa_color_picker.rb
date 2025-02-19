@@ -14,7 +14,7 @@ module Components
         no_format_toggle: false,
         opacity: false,
         required: false,
-        size: "medium",
+        size: "inherit",
         swatches: "",
         uppercase: false,
         value: nil,

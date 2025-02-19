@@ -7,7 +7,7 @@ module Components
         appearance: "accent",
         pill: false,
         pulse: false,
-        variant: "brand",
+        variant: "inherit",
         **attributes
       )
         @attributes = attributes.with_defaults({

@@ -11,7 +11,7 @@ module Components
         indeterminate: false,
         name: "",
         required: false,
-        size: "medium",
+        size: "inherit",
         title: "",
         value: nil,
         **attributes

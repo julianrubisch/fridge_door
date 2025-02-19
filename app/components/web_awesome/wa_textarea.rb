@@ -23,7 +23,7 @@ module Components
         required: false,
         resize: "vertical",
         rows: 4,
-        size: "medium",
+        size: "inherit",
         spellcheck: true,
         title: "",
         value: nil,

@@ -10,7 +10,7 @@ module Components
         hint: "",
         name: nil,
         required: false,
-        size: "medium",
+        size: "inherit",
         title: "",
         value: nil,
         with_hint: false,

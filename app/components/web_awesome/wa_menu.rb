@@ -4,9 +4,12 @@ module Components
       register_element :wa_menu
 
       def initialize(
+        size: "inherit",
         **attributes
       )
-        @attributes = attributes.with_defaults({})
+        @attributes = attributes.with_defaults({
+        size: size
+        })
       end
 
       def view_template(&)

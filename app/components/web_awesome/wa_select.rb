@@ -19,7 +19,7 @@ module Components
         placeholder: "",
         placement: "bottom",
         required: false,
-        size: "medium",
+        size: "inherit",
         value: nil,
         with_hint: false,
         with_label: false,

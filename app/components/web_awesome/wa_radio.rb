@@ -6,12 +6,12 @@ module Components
       def initialize(
         disabled: false,
         form: nil,
-        size: "medium",
+        size: "inherit",
         value: nil,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          disabled: disabled,
+        disabled: disabled,
           form: form,
           size: size,
           value: value

@@ -19,12 +19,12 @@ module Components
         name: nil,
         pill: false,
         rel: nil,
-        size: "medium",
+        size: "inherit",
         target: nil,
         title: "",
         type: "button",
         value: nil,
-        variant: "neutral",
+        variant: "inherit",
         **attributes
       )
         @attributes = attributes.with_defaults({

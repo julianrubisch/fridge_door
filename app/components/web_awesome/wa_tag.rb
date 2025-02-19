@@ -7,8 +7,8 @@ module Components
         appearance: "outlined filled",
         pill: false,
         removable: false,
-        size: "medium",
-        variant: "neutral",
+        size: "inherit",
+        variant: "inherit",
         **attributes
       )
         @attributes = attributes.with_defaults({

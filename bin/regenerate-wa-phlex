@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+system 'bundle exec phlex_custom_element_generator generate_components ./app/javascript/manifests/custom-elements.json --directory="./app/components/web_awesome" --namespaces="Components,WebAwesome"'

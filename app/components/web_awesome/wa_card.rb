@@ -4,6 +4,7 @@ module Components
       register_element :wa_card
 
       def initialize(
+        size: "inherit",
         with_footer: false,
         with_header: false,
         with_image: false,

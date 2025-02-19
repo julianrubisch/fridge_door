@@ -6,11 +6,15 @@ module Components
       def initialize(
         label: "",
         orientation: "horizontal",
+        size: "inherit",
+        variant: "inherit",
         **attributes
       )
         @attributes = attributes.with_defaults({
-          label: label,
-          orientation: orientation
+        label: label,
+          orientation: orientation,
+          size: size,
+          variant: variant
         })
       end
 
