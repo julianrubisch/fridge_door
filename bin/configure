@@ -1,7 +1,7 @@
+
 #!/usr/bin/env ruby
 require "prompts"
 require "active_support/core_ext/string"
-require "thor"
 require "optparse"
 
 # 1. Name app
@@ -11,22 +11,12 @@ require "optparse"
 # 4. TODO Install some ruby gems, e.g. sqlite-vec
 # 5. TODO Install sqlpkg packages (?)
 
-class ThorHelper
-  include Thor::Actions
-
-  def initialize(args = [], options = {}, config = {}) end
-
-  def self.source_root
-    File.dirname(__FILE__)
-  end
-end
-
 def rename_app(dry_run)
-  new_name = Prompts::TextPrompt.ask(label: "What should your app be called? (please use CamelCase)")
+  new_name = Prompts::TextPrompt.ask(label: "What should your app be called?")
 
   unless dry_run
-    system "git grep -e weisslich | xargs sed -i -e 's/weisslich/#{new_name.parameterize.underscore}'"
-    system "git grep -e Weisslich | xargs sed -i -e 's/weisslich/#{new_name.parameterize.underscore.camelize}'"
+    system "git grep -e weisslich -l -- ':(exclude)bin/configure' | xargs sed -i '' -e 's/weisslich/#{new_name.parameterize.underscore}/g'", exception: true
+    system "git grep -e Weisslich -l -- ':(exclude)bin/configure' | xargs sed -i '' -e 's/Weisslich/#{new_name.parameterize.underscore.camelize}/g'", exception: true
   end
 
   new_name
@@ -51,11 +41,9 @@ def choose_theme(dry_run)
   )
 
   unless dry_run
-    helper = ThorHelper.new
-
-    helper.gsub_file "app/views/layout/application.html.erb", "default.css", "#{theme}.css"
-    helper.gsub_file "app/components/layout.rb", "default.css", "#{theme}.css }"
-    helper.gsub_file "app/components/auth_layout.rb", "default.css", "#{theme}.css }"
+    system "sed -i '' -e 's/default.css/#{theme}.css/g' app/views/layouts/application.html.erb", exception: true
+    system "sed -i '' -e 's/default.css/#{theme}.css/g' app/components/layout.rb", exception: true
+    system "sed -i '' -e 's/default.css/#{theme}.css/g' app/components/auth_layout.rb", exception: true
   end
 
   theme
