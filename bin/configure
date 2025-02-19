@@ -1,0 +1,76 @@
+#!/usr/bin/env ruby
+require "prompts"
+require "active_support/core_ext/string"
+require "thor"
+require "optparse"
+
+# 1. Name app
+# 2. Choose WA theme
+# 3. TODO icon set, integrate with WA: tabler, heroicons: https://backers.webawesome.com/docs/components/icon#icon-libraries
+# 3. TODO Run auth?
+# 4. TODO Install some ruby gems, e.g. sqlite-vec
+# 5. TODO Install sqlpkg packages (?)
+
+class ThorHelper
+  include Thor::Actions
+
+  def initialize(args = [], options = {}, config = {}) end
+
+  def self.source_root
+    File.dirname(__FILE__)
+  end
+end
+
+def rename_app(dry_run)
+  new_name = Prompts::TextPrompt.ask(label: "What should your app be called? (please use CamelCase)")
+
+  unless dry_run
+    system "git grep -e weisslich | xargs sed -i -e 's/weisslich/#{new_name.parameterize.underscore}'"
+    system "git grep -e Weisslich | xargs sed -i -e 's/weisslich/#{new_name.parameterize.underscore.camelize}'"
+  end
+
+  new_name
+end
+
+def choose_theme(dry_run)
+  theme = Prompts::SelectPrompt.ask(
+    label: "Choose a WebAwesome Theme",
+    options: {
+      default: "Default (https://backers.webawesome.com/docs/themes/default/)",
+      classic: "Classic (https://backers.webawesome.com/docs/themes/classic/)",
+      awesome: "Awesome (https://backers.webawesome.com/docs/themes/awesome/)",
+      active: "Active (https://backers.webawesome.com/docs/themes/active/)",
+      brutalist: "Brutalist (https://backers.webawesome.com/docs/themes/brutalist/)",
+      glossy: "Glossy (https://backers.webawesome.com/docs/themes/glossy/)",
+      matter: "Matter (https://backers.webawesome.com/docs/themes/matter/)",
+      mellow: "Mellow (https://backers.webawesome.com/docs/themes/mellow/)",
+      playful: "Playful (https://backers.webawesome.com/docs/themes/playful/)",
+      premium: "Premium (https://backers.webawesome.com/docs/themes/premium/)",
+      tailspin: "Tailspin (https://backers.webawesome.com/docs/themes/tailspin/)"
+    }
+  )
+
+  unless dry_run
+    helper = ThorHelper.new
+
+    helper.gsub_file "app/views/layout/application.html.erb", "default.css", "#{theme}.css"
+    helper.gsub_file "app/components/layout.rb", "default.css", "#{theme}.css }"
+    helper.gsub_file "app/components/auth_layout.rb", "default.css", "#{theme}.css }"
+  end
+
+  theme
+end
+
+
+dry_run = false
+
+parser = OptionParser.new
+parser.on("-d", "--dry-run", "Dry Run") do |value|
+  dry_run = value
+end
+
+parser.parse!
+
+rename_app(dry_run)
+
+choose_theme(dry_run)
