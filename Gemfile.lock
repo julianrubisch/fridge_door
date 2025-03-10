@@ -297,9 +297,9 @@ GEM
     parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
-    phlex (2.0.2)
-    phlex-rails (2.0.2)
-      phlex (~> 2.0.2)
+    phlex (2.1.1)
+    phlex-rails (2.1.2)
+      phlex (~> 2.1.0)
       railties (>= 6.1, < 9)
     pp (0.6.2)
       prettyprint
@@ -325,7 +325,7 @@ GEM
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.10)
+    rack (3.1.11)
     rack-mini-profiler (3.3.1)
       rack (>= 1.2.0)
     rack-proxy (0.7.7)
@@ -538,7 +538,7 @@ DEPENDENCIES
   mission_control-jobs (~> 1.0)
   model_probe
   pagy (~> 9.3)
-  phlex-rails (= 2.0.2)
+  phlex-rails (= 2.1.2)
   phlex_custom_element_generator!
   prompts
   propshaft
