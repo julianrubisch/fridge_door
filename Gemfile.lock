@@ -91,7 +91,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
     authentication-zero (4.0.3)
-    avo (3.20.0)
+    avo (3.20.1)
       actionview (>= 6.1)
       active_link_to
       activerecord (>= 6.1)
@@ -228,7 +228,7 @@ GEM
       sqlite3
     logfmt (0.0.10)
     logger (1.7.0)
-    loofah (2.24.0)
+    loofah (2.24.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -243,7 +243,7 @@ GEM
       actionpack (>= 6.0.0, < 8.1)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
+    mini_portile2 (2.8.9)
     minitest (5.25.5)
     mission_control-jobs (1.0.2)
       actioncable (>= 7.1)
@@ -322,7 +322,7 @@ GEM
       activesupport (>= 7.0.0)
       rack
       railties (>= 7.0.0)
-    psych (5.2.4)
+    psych (5.2.6)
       date
       stringio
     public_suffix (6.0.2)
@@ -330,12 +330,12 @@ GEM
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.13)
+    rack (3.1.14)
     rack-mini-profiler (3.3.1)
       rack (>= 1.2.0)
     rack-proxy (0.7.7)
       rack
-    rack-session (2.1.0)
+    rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
     rack-test (2.2.0)
