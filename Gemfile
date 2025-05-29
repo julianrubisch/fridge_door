@@ -87,7 +87,7 @@ gem "solid_errors", "~> 0.5"
 
 gem "sqlpkg", "~> 0.2.3"
 
-gem "phlex-rails", "2.2.0"
+gem "phlex-rails", "2.3.0"
 
 gem "vite_rails"
 
