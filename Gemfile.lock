@@ -299,11 +299,12 @@ GEM
     parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
-    phlex (2.2.1)
+    phlex (2.3.1)
       zeitwerk (~> 2.7)
-    phlex-rails (2.2.0)
-      phlex (~> 2.2.1)
+    phlex-rails (2.3.0)
+      phlex (~> 2.3.0)
       railties (>= 7.1, < 9)
+      zeitwerk (~> 2.7)
     platform_agent (1.0.1)
       activesupport (>= 5.2.0)
       useragent (~> 0.16.3)
@@ -545,7 +546,7 @@ DEPENDENCIES
   mission_control-jobs (~> 1.0)
   model_probe
   pagy (~> 9.3)
-  phlex-rails (= 2.2.0)
+  phlex-rails (= 2.3.0)
   phlex_custom_element_generator!
   prompts
   propshaft
