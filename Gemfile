@@ -85,7 +85,7 @@ gem "litestream", "~> 0.12.0"
 # Add Solid Errors for error monitoring
 gem "solid_errors", "~> 0.5"
 
-gem "sqlpkg", "~> 0.2.3"
+gem "sqlpkg", "~> 0.3.0"
 
 gem "phlex-rails", "2.3.0"
 

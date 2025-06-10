@@ -451,10 +451,10 @@ GEM
     sqlite3 (2.7.0-x86_64-darwin)
     sqlite3 (2.7.0-x86_64-linux-gnu)
     sqlite3 (2.7.0-x86_64-linux-musl)
-    sqlpkg (0.2.3.2)
-    sqlpkg (0.2.3.2-arm64-darwin)
-    sqlpkg (0.2.3.2-x86_64-darwin)
-    sqlpkg (0.2.3.2-x86_64-linux)
+    sqlpkg (0.3.0)
+    sqlpkg (0.3.0-arm64-darwin)
+    sqlpkg (0.3.0-x86_64-darwin)
+    sqlpkg (0.3.0-x86_64-linux)
     sshkit (1.24.0)
       base64
       logger
@@ -560,7 +560,7 @@ DEPENDENCIES
   solid_errors (~> 0.5)
   solid_queue
   sqlite3 (>= 2.1)
-  sqlpkg (~> 0.2.3)
+  sqlpkg (~> 0.3.0)
   stackprof
   stimulus-rails
   thruster
