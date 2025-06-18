@@ -52,7 +52,7 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    active_job-performs (0.3.2)
+    active_job-performs (0.3.3)
       activejob (>= 6.1)
     active_link_to (1.0.5)
       actionpack
@@ -528,7 +528,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  active_job-performs (~> 0.3.2)
+  active_job-performs (~> 0.3.3)
   active_record-associated_object (~> 0.9.1)
   authentication-zero (~> 4.0)
   avo (>= 3.2)
