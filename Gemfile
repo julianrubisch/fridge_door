@@ -83,7 +83,7 @@ gem "mission_control-jobs", "~> 1.0"
 # Ensure all SQLite databases are backed up
 gem "litestream", "~> 0.14.0"
 # Add Solid Errors for error monitoring
-gem "solid_errors", "~> 0.5"
+gem "solid_errors", "~> 0.7"
 
 gem "sqlpkg", "~> 0.3.0"
 
