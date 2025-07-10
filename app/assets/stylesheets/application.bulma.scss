@@ -200,6 +200,10 @@ wa-card.grid-card {
   &::part(base) {
     height: 100%;
   }
+
+  &::part(body) {
+    flex: 1;
+  }
 }
 
 // auth layout

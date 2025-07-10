@@ -2,7 +2,7 @@
 
 class Components::TitleBar < Components::Base
   def view_template(&)
-    div(class: "title-bar wa-flank wa-align-items-center wa-gap-m", &)
+    div(class: "title-bar wa-split wa-align-items-center wa-gap-m", &)
   end
 
   def leading_action(&)

@@ -16,12 +16,14 @@ class Views::<%= class_name.pluralize %>::Show < Views::Base
     content_for :main_header do
       render Components::PageHeader.new do |header|
         header.title_bar { |title_bar|
-          title_bar.leading_action {
-            render Components::WebAwesome::WaIconButton.new(name: "arrow-left", href: <%= index_helper(type: :path) %>, variant: :regular, label: "Back to <%= human_name.pluralize.downcase %>")
-          }
+          div(class: "wa-cluster") {
+            title_bar.leading_action {
+              render Components::WebAwesome::WaIconButton.new(name: "arrow-left", href: <%= index_helper(type: :path) %>, variant: :regular, label: "Back to <%= human_name.pluralize.downcase %>")
+            }
 
-          title_bar.title {
-            # add title
+            title_bar.title {
+              # add title
+            }
           }
 
           title_bar.actions {
