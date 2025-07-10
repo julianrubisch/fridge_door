@@ -121,33 +121,33 @@ html:not(.wa-dark) .only-dark {
 :root,
 :host,
 .wa-light {
-  /* Changes the brand color to violet across the library */
-  --wa-color-brand-fill-quiet: var(--wa-color-violet-95);
-  --wa-color-brand-fill-normal: var(--wa-color-violet-90);
-  --wa-color-brand-fill-loud: var(--wa-color-violet-50);
-  --wa-color-brand-border-quiet: var(--wa-color-violet-90);
-  --wa-color-brand-border-normal: var(--wa-color-violet-80);
-  --wa-color-brand-border-loud: var(--wa-color-violet-60);
-  --wa-color-brand-on-quiet: var(--wa-color-violet-40);
-  --wa-color-brand-on-normal: var(--wa-color-violet-30);
+  /* Changes the brand color to purple across the library */
+  --wa-color-brand-fill-quiet: var(--wa-color-purple-95);
+  --wa-color-brand-fill-normal: var(--wa-color-purple-90);
+  --wa-color-brand-fill-loud: var(--wa-color-purple-50);
+  --wa-color-brand-border-quiet: var(--wa-color-purple-90);
+  --wa-color-brand-border-normal: var(--wa-color-purple-80);
+  --wa-color-brand-border-loud: var(--wa-color-purple-60);
+  --wa-color-brand-on-quiet: var(--wa-color-purple-40);
+  --wa-color-brand-on-normal: var(--wa-color-purple-30);
   --wa-color-brand-on-loud: white;
 
-  --wa-color-text-link: var(--wa-color-violet-40);
+  --wa-color-text-link: var(--wa-color-purple-40);
 
   --bulma-footer-background-color: var(--wa-color-gray-80);
 }
 
 .wa-dark {
-  --wa-color-brand-fill-quiet: var(--wa-color-violet-10);
-  --wa-color-brand-fill-normal: var(--wa-color-violet-20);
-  --wa-color-brand-fill-loud: var(--wa-color-violet-40);
-  --wa-color-brand-border-quiet: var(--wa-color-violet-10);
-  --wa-color-brand-border-normal: var(--wa-color-violet-20);
-  --wa-color-brand-border-loud: var(--wa-color-violet-30);
-  --wa-color-brand-on-quiet: var(--wa-color-violet-70);
-  --wa-color-brand-on-normal: var(--wa-color-violet-80);
+  --wa-color-brand-fill-quiet: var(--wa-color-purple-10);
+  --wa-color-brand-fill-normal: var(--wa-color-purple-20);
+  --wa-color-brand-fill-loud: var(--wa-color-purple-40);
+  --wa-color-brand-border-quiet: var(--wa-color-purple-10);
+  --wa-color-brand-border-normal: var(--wa-color-purple-20);
+  --wa-color-brand-border-loud: var(--wa-color-purple-30);
+  --wa-color-brand-on-quiet: var(--wa-color-purple-70);
+  --wa-color-brand-on-normal: var(--wa-color-purple-80);
   --wa-color-brand-on-loud: black;
-  --wa-color-text-link: var(--wa-color-violet-70);
+  --wa-color-text-link: var(--wa-color-purple-70);
 
   --bulma-footer-background-color: var(--wa-color-gray-20);
 }
