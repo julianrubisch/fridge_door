@@ -4,18 +4,20 @@ module Components
       register_element :wa_radio_group
 
       def initialize(
+        disabled: false,
         hint: "",
         label: "",
         name: nil,
         orientation: "vertical",
         required: false,
-        size: "inherit",
+        size: "medium",
         value: nil,
         with_hint: false,
         with_label: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
+        disabled: disabled,
           hint: hint,
           label: label,
           name: name,

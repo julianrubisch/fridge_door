@@ -11,22 +11,22 @@ module Components
         minimum_fraction_digits: nil,
         minimum_integer_digits: nil,
         minimum_significant_digits: nil,
-        no_grouping: false,
         type: "decimal",
         value: 0,
+        without_grouping: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          currency: currency,
+        currency: currency,
           currency_display: currency_display,
           maximum_fraction_digits: maximum_fraction_digits,
           maximum_significant_digits: maximum_significant_digits,
           minimum_fraction_digits: minimum_fraction_digits,
           minimum_integer_digits: minimum_integer_digits,
           minimum_significant_digits: minimum_significant_digits,
-          no_grouping: no_grouping,
           type: type,
-          value: value
+          value: value,
+          without_grouping: without_grouping
         })
       end
 

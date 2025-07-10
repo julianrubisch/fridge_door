@@ -5,22 +5,22 @@ module Components
 
       def initialize(
         disabled: false,
+        orientation: "horizontal",
         position: 50,
         position_in_pixels: nil,
         primary: nil,
         snap: nil,
         snap_threshold: 12,
-        vertical: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          disabled: disabled,
+        disabled: disabled,
+          orientation: orientation,
           position: position,
           position_in_pixels: position_in_pixels,
           primary: primary,
           snap: snap,
-          snap_threshold: snap_threshold,
-          vertical: vertical
+          snap_threshold: snap_threshold
         })
       end
 

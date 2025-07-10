@@ -8,37 +8,37 @@ module Components
         form: nil,
         format: "hex",
         hint: "",
-        hoist: false,
         label: "",
         name: nil,
-        no_format_toggle: false,
         opacity: false,
+        open: false,
         required: false,
-        size: "inherit",
+        size: "medium",
         swatches: "",
         uppercase: false,
         value: nil,
         with_hint: false,
         with_label: false,
+        without_format_toggle: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          disabled: disabled,
+        disabled: disabled,
           form: form,
           format: format,
           hint: hint,
-          hoist: hoist,
           label: label,
           name: name,
-          no_format_toggle: no_format_toggle,
           opacity: opacity,
+          open: open,
           required: required,
           size: size,
           swatches: swatches,
           uppercase: uppercase,
           value: value,
           with_hint: with_hint,
-          with_label: with_label
+          with_label: with_label,
+          without_format_toggle: without_format_toggle
         })
       end
 

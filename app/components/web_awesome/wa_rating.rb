@@ -10,12 +10,12 @@ module Components
         max: 5,
         precision: 1,
         readonly: false,
-        size: "inherit",
+        size: "medium",
         value: 0,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          disabled: disabled,
+        disabled: disabled,
           getSymbol: getSymbol,
           label: label,
           max: max,

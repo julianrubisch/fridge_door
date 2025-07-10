@@ -7,16 +7,14 @@ module Components
         label: "",
         light_dismiss: false,
         open: false,
-        with_footer: false,
-        with_header: false,
+        without_header: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          label: label,
+        label: label,
           light_dismiss: light_dismiss,
           open: open,
-          with_footer: with_footer,
-          with_header: with_header
+          without_header: without_header
         })
       end
 

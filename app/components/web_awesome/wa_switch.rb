@@ -10,14 +10,14 @@ module Components
         hint: "",
         name: nil,
         required: false,
-        size: "inherit",
+        size: "medium",
         title: "",
         value: nil,
         with_hint: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          checked: checked,
+        checked: checked,
           disabled: disabled,
           form: form,
           hint: hint,

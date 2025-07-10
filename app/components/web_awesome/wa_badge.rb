@@ -5,15 +5,15 @@ module Components
 
       def initialize(
         appearance: "accent",
+        attention: "none",
         pill: false,
-        pulse: false,
-        variant: "inherit",
+        variant: "brand",
         **attributes
       )
         @attributes = attributes.with_defaults({
-          appearance: appearance,
+        appearance: appearance,
+          attention: attention,
           pill: pill,
-          pulse: pulse,
           variant: variant
         })
       end

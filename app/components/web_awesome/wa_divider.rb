@@ -4,11 +4,11 @@ module Components
       register_element :wa_divider
 
       def initialize(
-        vertical: false,
+        orientation: "horizontal",
         **attributes
       )
         @attributes = attributes.with_defaults({
-          vertical: vertical
+        orientation: orientation
         })
       end
 

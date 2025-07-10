@@ -1,27 +1,27 @@
 module Components
   module WebAwesome
-    class WaDropdown < Phlex::HTML
-      register_element :wa_dropdown
+    class WaPopover < Phlex::HTML
+      register_element :wa_popover
 
       def initialize(
-        distance: 0,
+        distance: 8,
+        for: nil,
         open: false,
-        placement: "bottom-start",
-        size: "medium",
+        placement: 'top',
         skidding: 0,
         **attributes
       )
         @attributes = attributes.with_defaults({
         distance: distance,
+          for: for,
           open: open,
           placement: placement,
-          size: size,
           skidding: skidding
         })
       end
 
       def view_template(&)
-        wa_dropdown(**@attributes, &)
+        wa_popover(**@attributes, &)
       end
     end
   end

@@ -5,11 +5,15 @@ module Components
 
       def initialize(
         disabled: false,
+        label: nil,
+        selected: false,
         value: "",
         **attributes
       )
         @attributes = attributes.with_defaults({
-          disabled: disabled,
+        disabled: disabled,
+          label: label,
+          selected: selected,
           value: value
         })
       end

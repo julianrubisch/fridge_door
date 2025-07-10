@@ -4,14 +4,16 @@ module Components
       register_element :wa_radio
 
       def initialize(
+        appearance: "default",
         disabled: false,
         form: nil,
-        size: "inherit",
+        size: "medium",
         value: nil,
         **attributes
       )
         @attributes = attributes.with_defaults({
-        disabled: disabled,
+        appearance: appearance,
+          disabled: disabled,
           form: form,
           size: size,
           value: value

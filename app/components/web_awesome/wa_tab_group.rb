@@ -6,15 +6,15 @@ module Components
       def initialize(
         activation: "auto",
         active: "",
-        no_scroll_controls: false,
         placement: "top",
+        without_scroll_controls: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          activation: activation,
+        activation: activation,
           active: active,
-          no_scroll_controls: no_scroll_controls,
-          placement: placement
+          placement: placement,
+          without_scroll_controls: without_scroll_controls
         })
       end
 

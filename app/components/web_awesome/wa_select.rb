@@ -5,11 +5,9 @@ module Components
 
       def initialize(
         appearance: "outlined",
-        clearable: false,
         disabled: false,
         form: nil,
         hint: "",
-        hoist: false,
         label: "",
         max_options_visible: 3,
         multiple: false,
@@ -19,19 +17,18 @@ module Components
         placeholder: "",
         placement: "bottom",
         required: false,
-        size: "inherit",
+        size: "medium",
         value: nil,
+        with_clear: false,
         with_hint: false,
         with_label: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          appearance: appearance,
-          clearable: clearable,
+        appearance: appearance,
           disabled: disabled,
           form: form,
           hint: hint,
-          hoist: hoist,
           label: label,
           max_options_visible: max_options_visible,
           multiple: multiple,
@@ -43,6 +40,7 @@ module Components
           required: required,
           size: size,
           value: value,
+          with_clear: with_clear,
           with_hint: with_hint,
           with_label: with_label
         })

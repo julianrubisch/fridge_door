@@ -1,19 +1,19 @@
 module Components
   module WebAwesome
-    class WaMenu < Phlex::HTML
-      register_element :wa_menu
+    class WaComparison < Phlex::HTML
+      register_element :wa_comparison
 
       def initialize(
-        size: "inherit",
+        position: 50,
         **attributes
       )
         @attributes = attributes.with_defaults({
-        size: size
+        position: position
         })
       end
 
       def view_template(&)
-        wa_menu(**@attributes, &)
+        wa_comparison(**@attributes, &)
       end
     end
   end

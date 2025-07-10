@@ -1,29 +1,29 @@
 module Components
   module WebAwesome
-    class WaMenuItem < Phlex::HTML
-      register_element :wa_menu_item
+    class WaDropdownItem < Phlex::HTML
+      register_element :wa_dropdown_item
 
       def initialize(
         checked: false,
         disabled: false,
-        loading: false,
+        submenuOpen: false,
         type: "normal",
-        value: "",
-        with_submenu: false,
+        value: nil,
+        variant: "default",
         **attributes
       )
         @attributes = attributes.with_defaults({
-          checked: checked,
+        checked: checked,
           disabled: disabled,
-          loading: loading,
+          submenuOpen: submenuOpen,
           type: type,
           value: value,
-          with_submenu: with_submenu
+          variant: variant
         })
       end
 
       def view_template(&)
-        wa_menu_item(**@attributes, &)
+        wa_dropdown_item(**@attributes, &)
       end
     end
   end

@@ -9,19 +9,17 @@ module Components
         error_label: "",
         feedback_duration: 1000,
         from: "",
-        hoist: false,
         success_label: "",
         tooltip_placement: "top",
         value: "",
         **attributes
       )
         @attributes = attributes.with_defaults({
-          copy_label: copy_label,
+        copy_label: copy_label,
           disabled: disabled,
           error_label: error_label,
           feedback_duration: feedback_duration,
           from: from,
-          hoist: hoist,
           success_label: success_label,
           tooltip_placement: tooltip_placement,
           value: value

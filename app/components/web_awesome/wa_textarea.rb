@@ -23,7 +23,7 @@ module Components
         required: false,
         resize: "vertical",
         rows: 4,
-        size: "inherit",
+        size: "medium",
         spellcheck: true,
         title: "",
         value: nil,
@@ -32,7 +32,7 @@ module Components
         **attributes
       )
         @attributes = attributes.with_defaults({
-          appearance: appearance,
+        appearance: appearance,
           autocapitalize: autocapitalize,
           autocomplete: autocomplete,
           autocorrect: autocorrect,

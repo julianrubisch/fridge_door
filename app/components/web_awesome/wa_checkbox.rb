@@ -11,13 +11,13 @@ module Components
         indeterminate: false,
         name: "",
         required: false,
-        size: "inherit",
+        size: "medium",
         title: "",
         value: nil,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          checked: checked,
+        checked: checked,
           disabled: disabled,
           form: form,
           hint: hint,

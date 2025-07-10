@@ -9,7 +9,6 @@ module Components
         autocomplete: nil,
         autocorrect: nil,
         autofocus: nil,
-        clearable: false,
         enterkeyhint: nil,
         form: nil,
         hint: "",
@@ -19,7 +18,6 @@ module Components
         maxlength: nil,
         min: nil,
         minlength: nil,
-        no_spin_buttons: false,
         password_toggle: false,
         password_visible: false,
         pattern: nil,
@@ -27,23 +25,24 @@ module Components
         placeholder: "",
         readonly: false,
         required: false,
-        size: "inherit",
+        size: "medium",
         spellcheck: true,
         step: nil,
         title: "",
         type: "text",
         value: nil,
+        with_clear: false,
         with_hint: false,
         with_label: false,
+        without_spin_buttons: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          appearance: appearance,
+        appearance: appearance,
           autocapitalize: autocapitalize,
           autocomplete: autocomplete,
           autocorrect: autocorrect,
           autofocus: autofocus,
-          clearable: clearable,
           enterkeyhint: enterkeyhint,
           form: form,
           hint: hint,
@@ -53,7 +52,6 @@ module Components
           maxlength: maxlength,
           min: min,
           minlength: minlength,
-          no_spin_buttons: no_spin_buttons,
           password_toggle: password_toggle,
           password_visible: password_visible,
           pattern: pattern,
@@ -67,8 +65,10 @@ module Components
           title: title,
           type: type,
           value: value,
+          with_clear: with_clear,
           with_hint: with_hint,
-          with_label: with_label
+          with_label: with_label,
+          without_spin_buttons: without_spin_buttons
         })
       end
 

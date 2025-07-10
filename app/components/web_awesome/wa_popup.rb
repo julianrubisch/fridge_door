@@ -12,6 +12,7 @@ module Components
         autoSizeBoundary: nil,
         auto_size: nil,
         auto_size_padding: 0,
+        boundary: "viewport",
         distance: 0,
         flip: false,
         flipBoundary: nil,
@@ -24,12 +25,11 @@ module Components
         shiftBoundary: nil,
         shift_padding: 0,
         skidding: 0,
-        strategy: "absolute",
         sync: nil,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          active: active,
+        active: active,
           anchor: anchor,
           arrow: arrow,
           arrow_padding: arrow_padding,
@@ -37,6 +37,7 @@ module Components
           autoSizeBoundary: autoSizeBoundary,
           auto_size: auto_size,
           auto_size_padding: auto_size_padding,
+          boundary: boundary,
           distance: distance,
           flip: flip,
           flipBoundary: flipBoundary,
@@ -49,7 +50,6 @@ module Components
           shiftBoundary: shiftBoundary,
           shift_padding: shift_padding,
           skidding: skidding,
-          strategy: strategy,
           sync: sync
         })
       end

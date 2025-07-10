@@ -5,7 +5,6 @@ module Components
 
       def initialize(
         appearance: "accent",
-        caret: false,
         disabled: false,
         download: nil,
         form: nil,
@@ -19,17 +18,17 @@ module Components
         name: nil,
         pill: false,
         rel: nil,
-        size: "inherit",
+        size: "medium",
         target: nil,
         title: "",
         type: "button",
         value: nil,
-        variant: "inherit",
+        variant: "neutral",
+        with_caret: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
-          appearance: appearance,
-          caret: caret,
+        appearance: appearance,
           disabled: disabled,
           download: download,
           form: form,
@@ -48,7 +47,8 @@ module Components
           title: title,
           type: type,
           value: value,
-          variant: variant
+          variant: variant,
+          with_caret: with_caret
         })
       end
 

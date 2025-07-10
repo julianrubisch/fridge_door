@@ -5,12 +5,12 @@ module Components
 
       def initialize(
         appearance: "outlined filled",
-        size: "inherit",
-        variant: "inherit",
+        size: "medium",
+        variant: "brand",
         **attributes
       )
         @attributes = attributes.with_defaults({
-          appearance: appearance,
+        appearance: appearance,
           size: size,
           variant: variant
         })

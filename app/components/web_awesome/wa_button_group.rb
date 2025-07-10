@@ -6,8 +6,8 @@ module Components
       def initialize(
         label: "",
         orientation: "horizontal",
-        size: "inherit",
-        variant: "inherit",
+        size: nil,
+        variant: "neutral",
         **attributes
       )
         @attributes = attributes.with_defaults({
