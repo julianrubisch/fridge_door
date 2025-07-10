@@ -17,6 +17,8 @@ class Components::AuthLayout < Components::Base
       head do
         title { content_for(:title) || Rails.application.name }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
+        meta name: "view-transition", content: "same-origin"
+
         csp_meta_tag
         csrf_meta_tags
         stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/styles/themes/default.css"
