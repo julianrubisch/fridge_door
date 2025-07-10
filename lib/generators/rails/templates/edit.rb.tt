@@ -17,8 +17,8 @@ class Views::<%= class_name.pluralize %>::Edit < Views::Base
         header.title_bar { |title_bar|
           div(class: "wa-cluster") {
             title_bar.leading_action {
-              render Components::WebAwesome::WaButton.new(href: <%= index_helper(type: :path) %>, variant: :regular, appearance: :plain) {
-                render Components::WebAwesome::WaIcon.new(name: "arrow-left", label: "Back to <%= human_name.pluralize.downcase %>")
+              render Components::WebAwesome::WaButton.new(href: <%= index_helper(type: :path) %>, appearance: :plain) {
+                render Components::WebAwesome::WaIcon.new(name: "arrow-left", variant: :regular, label: "Back to <%= human_name.pluralize.downcase %>")
               }
             }
 
