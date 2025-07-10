@@ -81,20 +81,20 @@ end
 # Add a web UI for Solid Queue
 gem "mission_control-jobs", "~> 1.0"
 # Ensure all SQLite databases are backed up
-gem "litestream", "~> 0.12.0"
+gem "litestream", "~> 0.14.0"
 # Add Solid Errors for error monitoring
-gem "solid_errors", "~> 0.5"
+gem "solid_errors", "~> 0.7"
 
-gem "sqlpkg", "~> 0.2.3"
+gem "sqlpkg", "~> 0.3.0"
 
-gem "phlex-rails", "2.2.0"
+gem "phlex-rails", "2.3.1"
 
 gem "vite_rails"
 
 gem "authentication-zero", "~> 4.0"
 gem "avo", ">= 3.2"
 
-gem "active_job-performs", "~> 0.3.2"
+gem "active_job-performs", "~> 0.3.3"
 
 gem "active_record-associated_object", "~> 0.9.1"
 
