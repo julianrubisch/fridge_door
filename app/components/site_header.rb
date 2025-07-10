@@ -16,37 +16,35 @@ class Components::SiteHeader < Components::Base
       div(class: "wa-cluster wa-gap-xs") {
         render WebAwesome::WaDropdown.new(placement: "bottom-start", class: "is-hidden-mobile", data: {
                                             controller: "radio-dropdown",
-                                            action: "dark-mode:change@document->radio-dropdown#updateSelection",
+                                            action: "wa-select->dark-mode#toggle dark-mode:change@document->radio-dropdown#updateSelection",
                                             radio_dropdown_key_value: "colorScheme" }) do |dropdown|
           render WebAwesome::WaButton.new(slot: :trigger, appearance: :filled, size: :small, pill: true, caret: true) do |button|
-            render WebAwesome::WaIcon.new(slot: "prefix", name: "sun", variant: "solid", class: "only-light")
-            render WebAwesome::WaIcon.new(slot: "prefix", name: "moon", variant: "solid", class: "only-dark")
+            render WebAwesome::WaIcon.new(slot: "start", name: "sun", variant: "solid", class: "only-light")
+            render WebAwesome::WaIcon.new(slot: "start", name: "moon", variant: "solid", class: "only-dark")
             span(class: "only-light") { "Light" }
             span(class: "only-dark") { "Dark" }
           end
 
-          render WebAwesome::WaMenu.new(data: { action: "wa-select->dark-mode#toggle" }) do
-            render WebAwesome::WaMenuItem.new(value: :light, type: :checkbox) { "Light" }
-            render WebAwesome::WaMenuItem.new(value: :dark, type: :checkbox) { "Dark" }
-            render WebAwesome::WaDivider.new
-            render WebAwesome::WaMenuItem.new(value: :auto, type: :checkbox) { "System" }
-          end
+          render WebAwesome::WaDropdownItem.new(value: :light, type: :checkbox) { "Light" }
+          render WebAwesome::WaDropdownItem.new(value: :dark, type: :checkbox) { "Dark" }
+          render WebAwesome::WaDivider.new
+          render WebAwesome::WaDropdownItem.new(value: :auto, type: :checkbox) { "System" }
         end
 
         render WebAwesome::WaDropdown.new(placement: "bottom-start") do |dropdown|
-          render WebAwesome::WaIconButton.new(slot: :trigger, name: "bars")
+          render WebAwesome::WaButton.new(slot: :trigger,appearance: "plain") {
+            render WebAwesome::WaIcon.new(name: "bars")
+          }
 
-          render WebAwesome::WaMenu.new do
-            # render WebAwesome::WaMenuItem.new do
-            #   Current.user.email
-            # end
-            render WebAwesome::WaDivider.new
-            # render WebAwesome::WaMenuItem.new do
-            #   render WebAwesome::WaIcon.new(slot: "prefix", name: "right-from-bracket", variant: "solid")
+          # render WebAwesome::WaDropdownItem.new do
+          #   Current.user.email
+          # end
+          render WebAwesome::WaDivider.new
+          # render WebAwesome::WaDropdownItem.new do
+          # render WebAwesome::WaIcon.new(slot: "start", name: "right-from-bracket", variant: "solid")
 
-            #   link_to "Log out", Current.session, data: { turbo_method: :delete }
-            # end
-          end
+          # link_to "Log out", Current.session, data: { turbo_method: :delete }
+          # end
         end
       }
     }

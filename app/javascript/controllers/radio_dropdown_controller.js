@@ -11,7 +11,7 @@ export default class extends Controller {
     const menu = this.element;
     const value = event.detail[this.keyValue];
 
-    [...menu.querySelectorAll("wa-menu-item")].map(
+    [...menu.querySelectorAll("wa-dropdown-item")].map(
       (item) => (item.checked = item.getAttribute("value") === value),
     );
   }
