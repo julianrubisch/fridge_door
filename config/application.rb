@@ -28,5 +28,8 @@ module Weisslich
 
     config.active_record.strict_loading_mode = :n_plus_one_only
     config.active_record.async_query_executor = :global_thread_pool
+
+    # so enlitenment's config doesn't conflict
+    config.mission_control.jobs.http_basic_auth_enabled = false
   end
 end
