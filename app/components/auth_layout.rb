@@ -13,7 +13,7 @@ class Components::AuthLayout < Components::Base
   def view_template(&block)
     doctype
 
-    html do
+    html(class: "wa-cloak") do
       head do
         title { content_for(:title) || Rails.application.name }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
