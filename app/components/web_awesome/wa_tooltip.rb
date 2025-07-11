@@ -18,7 +18,7 @@ module Components
         @attributes = attributes.with_defaults({
         disabled: disabled,
           distance: distance,
-          for: for,
+          for:,
           hide_delay: hide_delay,
           open: open,
           placement: placement,

@@ -13,7 +13,7 @@ module Components
       )
         @attributes = attributes.with_defaults({
         distance: distance,
-          for: for,
+          for:,
           open: open,
           placement: placement,
           skidding: skidding
