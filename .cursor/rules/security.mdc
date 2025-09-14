@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+- ALWAYS use strong params in controllers

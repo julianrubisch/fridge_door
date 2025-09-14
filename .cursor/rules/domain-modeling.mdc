@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- when working on the domain model, always opt for the most flexible, most loosely coupled option. for example,
+  - choose many-to-many over many-to-one relations where applicable
+  - create extendable, polymorphic hierarchies
+  

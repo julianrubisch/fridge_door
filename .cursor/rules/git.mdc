@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- Before making ANY code, test, or file changes, ALWAYS check out the main branch and create a new git feature branch for the task. Do NOT make any edits until the new branch is created. This applies to ALL changes, including tests, code, configs, or documentation.
+- If a change is requested and a branch has not yet been created, STOP and create the branch first, then proceed with the change.
+- Before pushing to Github, ALWAYS run the tests
+- ALWAYS create atomic commits and adhere to conventional commits
