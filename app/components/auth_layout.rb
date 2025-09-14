@@ -21,9 +21,9 @@ class Components::AuthLayout < Components::Base
 
         csp_meta_tag
         csrf_meta_tags
-        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-beta.2/dist/styles/themes/default.css"
+        stylesheet_link_tag "https://early.webawesome.com/webawesome@3.0.0-beta.5/dist/styles/themes/default.css"
         stylesheet_link_tag "application", data_turbo_track: "reload"
-        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-beta.2/dist/webawesome.loader.js", type: "module", async: true, defer: true
+        javascript_include_tag "https://early.webawesome.com/webawesome@3.0.0-beta.5/dist/webawesome.loader.js", type: "module", async: true, defer: true
 
         script {
           safe <<~JS

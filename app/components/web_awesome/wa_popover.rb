@@ -9,6 +9,7 @@ module Components
         open: false,
         placement: 'top',
         skidding: 0,
+        without_arrow: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
@@ -16,7 +17,8 @@ module Components
           for:,
           open: open,
           placement: placement,
-          skidding: skidding
+          skidding: skidding,
+          without_arrow: without_arrow
         })
       end
 

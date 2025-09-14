@@ -6,6 +6,7 @@ module Components
       def initialize(
         appearance: "outlined",
         disabled: false,
+        icon_placement: "end",
         name: nil,
         open: false,
         summary: nil,
@@ -14,6 +15,7 @@ module Components
         @attributes = attributes.with_defaults({
         appearance: appearance,
           disabled: disabled,
+          icon_placement: icon_placement,
           name: name,
           open: open,
           summary: summary

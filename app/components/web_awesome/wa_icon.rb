@@ -4,22 +4,24 @@ module Components
       register_element :wa_icon
 
       def initialize(
+        auto_width: nil,
         family: nil,
-        fixed_width: nil,
         label: "",
         library: "default",
         name: nil,
         src: nil,
+        swap_opacity: false,
         variant: nil,
         **attributes
       )
         @attributes = attributes.with_defaults({
+        auto_width: auto_width,
           family: family,
-          fixed_width: fixed_width,
           label: label,
           library: library,
           name: name,
           src: src,
+          swap_opacity: swap_opacity,
           variant: variant
         })
       end

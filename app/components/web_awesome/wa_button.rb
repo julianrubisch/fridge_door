@@ -13,7 +13,7 @@ module Components
         formmethod: nil,
         formnovalidate: nil,
         formtarget: nil,
-        href: "",
+        href: nil,
         loading: false,
         name: nil,
         pill: false,

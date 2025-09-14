@@ -13,6 +13,7 @@ module Components
         show_delay: 150,
         skidding: 0,
         trigger: 'hover focus',
+        without_arrow: false,
         **attributes
       )
         @attributes = attributes.with_defaults({
@@ -24,7 +25,8 @@ module Components
           placement: placement,
           show_delay: show_delay,
           skidding: skidding,
-          trigger: trigger
+          trigger: trigger,
+          without_arrow: without_arrow
         })
       end
 

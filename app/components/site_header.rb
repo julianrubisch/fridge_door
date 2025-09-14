@@ -32,7 +32,7 @@ class Components::SiteHeader < Components::Base
         end
 
         render WebAwesome::WaDropdown.new(placement: "bottom-start") do |dropdown|
-          render WebAwesome::WaButton.new(slot: :trigger,appearance: "plain") {
+          render WebAwesome::WaButton.new(slot: :trigger, appearance: "plain") {
             render WebAwesome::WaIcon.new(name: "bars")
           }
 
