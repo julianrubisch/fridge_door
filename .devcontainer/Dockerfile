@@ -7,9 +7,5 @@ RUN echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
-RUN gem install overmind
-RUN gem install rails-mcp-server
-RUN npm i -g prettier
-
 RUN mkdir -p /home/vscode/.config/rails-mcp
 COPY .devcontainer/rails-mcp/projects.yml /home/vscode/.config/rails-mcp/projects.yml
