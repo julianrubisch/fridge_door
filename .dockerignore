@@ -41,6 +41,7 @@
 
 # Ignore development files
 /.devcontainer
+!/.devcontainer/rails-mcp/
 
 # Ignore Docker-related files
 /.dockerignore
