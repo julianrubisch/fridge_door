@@ -1,0 +1,61 @@
+# frozen_string_literal: true
+
+class Views::<%= class_name.pluralize %>::Index < Views::Base
+  include Phlex::Rails::Helpers::Routes
+  include Phlex::Rails::Helpers::ContentFor
+  include Phlex::Rails::Helpers::DOMID
+  include Phlex::Rails::Helpers::ButtonTo
+
+  def initialize(<%= model_resource_name.pluralize %>)
+    <%= model_resource_name(prefix: "@").pluralize %> = <%= model_resource_name.pluralize %>
+  end
+
+  def view_template
+    content_for :title, "<%= human_name.pluralize %>"
+
+    content_for :main_header do
+      render Components::PageHeader.new do |header|
+        header.title_bar { |title_bar|
+          title_bar.title {
+            # add title
+          }
+
+          title_bar.actions {
+            render Components::WebAwesome::WaButton.new(appearance: :filled, variant: :brand, size: :small, href: <%= new_helper(type: :path) %>) {
+              render Components::WebAwesome::WaIcon.new(slot: "start", name: "plus", variant: "solid")
+              span { "New <%= human_name.downcase %>" }
+            }
+          }
+        }
+      end
+    end
+
+    render Components::Grid.new(id: "<%= plural_table_name %>") {
+      @<%= plural_table_name %>.map { |<%= singular_table_name %>|
+        render Components::GridCell.new(id: dom_id(<%= singular_table_name %>)) {
+          div {
+            # add card body
+          }
+
+          div(slot: "footer", class: "wa-split wa-align-items-center") {
+            render Components::WebAwesome::WaButton.new(appearance: :outlined, variant: :brand, href: <%= show_helper(singular_table_name, type: :path) %>) {
+              "More Info"
+            }
+
+            div(class: "wa-cluster") {
+              render Components::WebAwesome::WaButton.new(href: <%= edit_helper(singular_table_name, type: :path) %>, appearance: :plain) {
+                render Components::WebAwesome::WaIcon.new(name: "pen", variant: :regular, label: "Edit <%= human_name.downcase %>")
+              }
+
+              button_to <%= model_resource_name %>, method: :delete, data: { turbo_confirm: "Are you sure?" } do
+                render Components::WebAwesome::WaButton.new(appearance: :plain) {
+                  render Components::WebAwesome::WaIcon.new(name: "trash", variant: :regular, label: "Destroy <%= human_name.downcase %>")
+                }
+              end
+            }
+          }
+        }
+      }
+    }
+  end
+end

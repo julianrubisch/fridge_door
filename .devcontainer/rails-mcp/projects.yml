@@ -1,0 +1,3 @@
+# Rails MCP Projects
+# Format: project_name: /path/to/project
+my_app: /workspaces/my_app

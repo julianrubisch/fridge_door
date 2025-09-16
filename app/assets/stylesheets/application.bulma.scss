@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+// see https://www.figma.com/design/y5w1WWKDgoJCIUa4dYuKcA/Harmony%3A-Accessible-UI-Color-Palette-(Community)?t=NmQZ7PSLZ1mK1rlw-0 for available colors
+// @import "@evilmartians/harmony/dist/css/teal";
+// workaround because of Error: This function isn't allowed in plain CSS. 15 │ @supports (color: oklch(0% 0 0)) {
+
+// :root {
+//   --teal-50:#f9fcfa;
+//   --teal-100:#e9f7ef;
+//   --teal-200:#cbebd8;
+//   --teal-300:#9fdcba;
+//   --teal-400:#6ecc9d;
+//   --teal-500:#23bc7f;
+//   --teal-600:#009662;
+//   --teal-700:#00794e;
+//   --teal-800:#005636;
+//   --teal-900:#003520;
+//   --teal-950:#00180c;
+// }
+
+// Import a Google Font
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+// $purple: #8A4D76;
+// $pink: #FA7C91;
+// $brown: #757763;
+// $beige-light: #D0D1CD;
+// $beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+// $family-sans-serif: "Nunito", sans-serif;
+// $grey-dark: $brown;
+// $grey-light: $beige-light;
+// $primary: $purple;
+// $link: $pink;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+// $body-background-color: $beige-lighter;
+// $control-border-width: 2px;
+// $input-border-color: transparent;
+// $input-shadow: none;
+
+// Import only what you need from Bulma
+@import "bulma/sass/utilities";
+
+@layer minireset, wa-native-base, wa-native, wa-utilities;
+
+/* Native styles */
+@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/native/base.css') layer(wa-native-base);
+@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/native.css') layer(wa-native);
+/* CSS Utilities */
+@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/utilities.css') layer(wa-utilities);
+
+@layer wa-native {
+  .wa-native-off,
+  .wa-native-off-deep,
+  .wa-native-off-deep * {
+    all: revert-layer;
+  }
+}
+
+@layer wa-utilities {
+  .wa-off,
+  .wa-off-deep,
+  .wa-off-deep * {
+    all: revert-layer;
+  }
+}
+
+/* FOUCE reduction */
+@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/utilities/fouce.css');
+
+/* Web Awesome components */
+@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/components/page.css');
+
+
+@layer minireset {
+  @import "./minireset";
+
+  .minireset-off {
+    all: revert-layer;
+  }
+}
+
+// @import "bulma/sass/base/generic";
+
+@import "bulma/sass/helpers";
+@import "bulma/sass/themes";
+
+// TODO only use needed modules
+@import "bulma/sass/layout";
+// @import "bulma/sass/layout/container";
+// @import "bulma/sass/layout/footer";
+// @import "bulma/sass/layout/hero";
+// @import "bulma/sass/layout/level";
+// @import "bulma/sass/layout/media";
+// @import "bulma/sass/layout/section";
+
+
+// @import "bulma/sass/layout/hero.sass";
+// @import "bulma/sass/layout/section.sass";
+
+// @import 'bulma/bulma';
+
+@import "./hw_combobox";
+
+html, body {
+  height: 100%;
+}
+
+// dark mode
+html.wa-dark .only-light,
+html:not(.wa-dark) .only-dark {
+  display: none;
+}
+
+// customize wa theme
+:root,
+:host,
+.wa-light {
+  /* Changes the brand color to purple across the library */
+  --wa-color-brand-fill-quiet: var(--wa-color-purple-95);
+  --wa-color-brand-fill-normal: var(--wa-color-purple-90);
+  --wa-color-brand-fill-loud: var(--wa-color-purple-50);
+  --wa-color-brand-border-quiet: var(--wa-color-purple-90);
+  --wa-color-brand-border-normal: var(--wa-color-purple-80);
+  --wa-color-brand-border-loud: var(--wa-color-purple-60);
+  --wa-color-brand-on-quiet: var(--wa-color-purple-40);
+  --wa-color-brand-on-normal: var(--wa-color-purple-30);
+  --wa-color-brand-on-loud: white;
+
+  --wa-color-text-link: var(--wa-color-purple-40);
+
+  --bulma-footer-background-color: var(--wa-color-gray-80);
+}
+
+.wa-dark {
+  --wa-color-brand-fill-quiet: var(--wa-color-purple-10);
+  --wa-color-brand-fill-normal: var(--wa-color-purple-20);
+  --wa-color-brand-fill-loud: var(--wa-color-purple-40);
+  --wa-color-brand-border-quiet: var(--wa-color-purple-10);
+  --wa-color-brand-border-normal: var(--wa-color-purple-20);
+  --wa-color-brand-border-loud: var(--wa-color-purple-30);
+  --wa-color-brand-on-quiet: var(--wa-color-purple-70);
+  --wa-color-brand-on-normal: var(--wa-color-purple-80);
+  --wa-color-brand-on-loud: black;
+  --wa-color-text-link: var(--wa-color-purple-70);
+
+  --bulma-footer-background-color: var(--wa-color-gray-20);
+}
+
+body {
+  font-family: var(--wa-font-family-body);
+}
+
+main {
+  padding: var(--wa-space-m);
+}
+
+[slot="main-header"] {
+  padding: 0 var(--wa-space-m);
+}
+
+// as long as we use our own hamburger menu...
+wa-page::part(navigation-toggle) {
+  display: none;
+}
+
+// callouts
+wa-callout {
+  strong {
+    color: var(--content-color);
+  }
+}
+
+// validation
+[data-wa-invalid] {
+  --border-color: var(--wa-color-danger-border-normal);
+}
+
+// typography
+a {
+  color: var(--wa-color-text-link);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// grid
+wa-card.grid-card {
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  max-height: 16rem;
+
+  &::part(base) {
+    height: 100%;
+  }
+
+  &::part(body) {
+    flex: 1;
+  }
+}
+
+// auth layout
+wa-card.card-auth {
+  width: 30rem;
+  max-width: 100%;
+}
+
+// page header
+.page-header {
+  .description {
+    --wa-font-weight-heading: var(--wa-font-weight-semibold);
+  }
+}
+
+// title bar
+.title-bar {
+  h1 {
+    font-size: var(--wa-font-size-l);
+
+    @media(min-width: 48em) {
+      font-size: var(--wa-font-size-2xl);
+    }
+  }
+}

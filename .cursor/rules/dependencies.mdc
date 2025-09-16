@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- This is a Web Awesome project. Be sure to apply the correct syntax when modifying HTML code
+- when dealing with external dependencies, ALWAYS consult the context7 MCP for documentation

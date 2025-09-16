@@ -1,0 +1,38 @@
+module Components
+  module WebAwesome
+    class WaTooltip < Phlex::HTML
+      register_element :wa_tooltip
+
+      def initialize(
+        disabled: false,
+        distance: 8,
+        for: nil,
+        hide_delay: 0,
+        open: false,
+        placement: 'top',
+        show_delay: 150,
+        skidding: 0,
+        trigger: 'hover focus',
+        without_arrow: false,
+        **attributes
+      )
+        @attributes = attributes.with_defaults({
+        disabled: disabled,
+          distance: distance,
+          for:,
+          hide_delay: hide_delay,
+          open: open,
+          placement: placement,
+          show_delay: show_delay,
+          skidding: skidding,
+          trigger: trigger,
+          without_arrow: without_arrow
+        })
+      end
+
+      def view_template(&)
+        wa_tooltip(**@attributes, &)
+      end
+    end
+  end
+end

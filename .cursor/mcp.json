@@ -1,0 +1,34 @@
+{
+    "mcpServers": {
+        "rails": {
+            "command": "rails-mcp-server",
+            "type": "command"
+        },
+        "context7": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@upstash/context7-mcp"
+            ]
+        },
+        "fetch": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-fetch"
+            ]
+        },
+        "github-remote": {
+            "url": "https://api.githubcopilot.com/mcp/",
+            "headers": {
+              "Authorization": "Bearer GITHUB_PAT"
+            }
+        },
+        "sqlite": {
+            "command": "uvx",
+            "args": [
+                "mcp-sqlite",
+                "/workspaces/my_app/storage/development.sqlite3"
+            ]
+        }
+    }
+}

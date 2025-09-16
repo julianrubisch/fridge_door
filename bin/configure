@@ -1,0 +1,64 @@
+
+#!/usr/bin/env ruby
+require "prompts"
+require "active_support/core_ext/string"
+require "optparse"
+
+# 1. Name app
+# 2. Choose WA theme
+# 3. TODO icon set, integrate with WA: tabler, heroicons: https://backers.webawesome.com/docs/components/icon#icon-libraries
+# 3. TODO Run auth?
+# 4. TODO Install some ruby gems, e.g. sqlite-vec
+# 5. TODO Install sqlpkg packages (?)
+
+def rename_app(dry_run)
+  new_name = Prompts::TextPrompt.ask(label: "What should your app be called?")
+
+  unless dry_run
+    system "git grep -e weisslich -l -- ':(exclude)bin/configure' | xargs sed -i '' -e 's/weisslich/#{new_name.parameterize.underscore}/g'", exception: true
+    system "git grep -e Weisslich -l -- ':(exclude)bin/configure' | xargs sed -i '' -e 's/Weisslich/#{new_name.parameterize.underscore.camelize}/g'", exception: true
+  end
+
+  new_name
+end
+
+def choose_theme(dry_run)
+  theme = Prompts::SelectPrompt.ask(
+    label: "Choose a WebAwesome Theme",
+    options: {
+      default: "Default (https://backers.webawesome.com/docs/themes/default/)",
+      classic: "Classic (https://backers.webawesome.com/docs/themes/classic/)",
+      awesome: "Awesome (https://backers.webawesome.com/docs/themes/awesome/)",
+      active: "Active (https://backers.webawesome.com/docs/themes/active/)",
+      brutalist: "Brutalist (https://backers.webawesome.com/docs/themes/brutalist/)",
+      glossy: "Glossy (https://backers.webawesome.com/docs/themes/glossy/)",
+      matter: "Matter (https://backers.webawesome.com/docs/themes/matter/)",
+      mellow: "Mellow (https://backers.webawesome.com/docs/themes/mellow/)",
+      playful: "Playful (https://backers.webawesome.com/docs/themes/playful/)",
+      premium: "Premium (https://backers.webawesome.com/docs/themes/premium/)",
+      tailspin: "Tailspin (https://backers.webawesome.com/docs/themes/tailspin/)"
+    }
+  )
+
+  unless dry_run
+    system "sed -i '' -e 's/default.css/#{theme}.css/g' app/views/layouts/application.html.erb", exception: true
+    system "sed -i '' -e 's/default.css/#{theme}.css/g' app/components/layout.rb", exception: true
+    system "sed -i '' -e 's/default.css/#{theme}.css/g' app/components/auth_layout.rb", exception: true
+  end
+
+  theme
+end
+
+
+dry_run = false
+
+parser = OptionParser.new
+parser.on("-d", "--dry-run", "Dry Run") do |value|
+  dry_run = value
+end
+
+parser.parse!
+
+rename_app(dry_run)
+
+choose_theme(dry_run)
