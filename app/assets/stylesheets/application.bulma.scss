@@ -49,10 +49,7 @@
 @layer minireset, wa-native-base, wa-native, wa-utilities;
 
 /* Native styles */
-@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/native/base.css') layer(wa-native-base);
-@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/native.css') layer(wa-native);
-/* CSS Utilities */
-@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/utilities.css') layer(wa-utilities);
+@import url('https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/webawesome.css') layer(wa-native);
 
 @layer wa-native {
   .wa-native-off,
