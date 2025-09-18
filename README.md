@@ -1,4 +1,4 @@
-# Weisslich
+# FridgeDoor
 
 A very opinionated, _conceptually compressed, web-components-first_ Rails template
 
