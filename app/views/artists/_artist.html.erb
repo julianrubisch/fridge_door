@@ -1,0 +1,27 @@
+<div id="<%= dom_id artist %>">
+  <p>
+    <strong>First name:</strong>
+    <%= artist.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= artist.last_name %>
+  </p>
+
+  <p>
+    <strong>Date of birth:</strong>
+    <%= artist.date_of_birth %>
+  </p>
+
+  <p>
+    <strong>Notes:</strong>
+    <%= artist.notes %>
+  </p>
+
+  <p>
+    <strong>Avatar:</strong>
+    <%= link_to artist.avatar.filename, artist.avatar if artist.avatar.attached? %>
+  </p>
+
+</div>
