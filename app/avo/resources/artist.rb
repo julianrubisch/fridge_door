@@ -1,5 +1,5 @@
 class Avo::Resources::Artist < Avo::BaseResource
-  # self.includes = []
+  self.includes = [ :artworks ]
   self.attachments = [ :avatar ]
   # self.search = {
   #   query: -> { query.ransack(id_eq: q, m: "or").result(distinct: false) }
@@ -12,5 +12,6 @@ class Avo::Resources::Artist < Avo::BaseResource
     field :date_of_birth, as: :date
     field :notes, as: :trix
     field :avatar, as: :file, is_image: true
+    field :artworks, as: :has_many
   end
 end

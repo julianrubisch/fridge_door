@@ -1,0 +1,27 @@
+<div id="<%= dom_id artwork %>">
+  <p>
+    <strong>Artist:</strong>
+    <%= artwork.artist_id %>
+  </p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= artwork.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= artwork.description %>
+  </p>
+
+  <p>
+    <strong>Created on:</strong>
+    <%= artwork.created_on %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= link_to artwork.image.filename, artwork.image if artwork.image.attached? %>
+  </p>
+
+</div>

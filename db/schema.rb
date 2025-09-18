@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_18_075225) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_18_081335) do
   create_table "action_text_rich_texts", id: { type: :string, limit: 26, default: -> { "ULID()" } }, force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -57,6 +57,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_18_075225) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "artworks", id: { type: :string, limit: 26, default: -> { "ULID()" } }, force: :cascade do |t|
+    t.string "artist_id", limit: 26, null: false
+    t.string "title", null: false
+    t.date "created_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artworks_on_artist_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "artworks", "artists"
 end

@@ -1,0 +1,38 @@
+<%= wa_form_with(model: artwork, html: {class: "wa-stack"}) do |form| %>
+  <% if artwork.errors.any? %>
+    <wa-callout variant="danger">
+      <wa-icon slot="icon" name="circle-exclamation" variant="regular"></wa-icon>
+      <strong><%= pluralize(artwork.errors.count, "error") %> prohibited this artwork from being saved:</strong>
+
+      <ul>
+        <% artwork.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </wa-callout>
+  <% end %>
+
+  <div class="wa-stack wa-gap-0">
+    <%= form.text_field :artist_id %>
+  </div>
+
+  <div class="wa-stack wa-gap-0">
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="wa-stack wa-gap-0">
+    <%= form.rich_textarea :description %>
+  </div>
+
+  <div class="wa-stack wa-gap-0">
+    <%= form.date_field :created_on %>
+  </div>
+
+  <div class="wa-stack wa-gap-0">
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
